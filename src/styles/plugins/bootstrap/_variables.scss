@@ -1,0 +1,56 @@
+/*
+* BOOTSTRAP VARIABLES
+* Here you should change bootstrap variables for global theming
+*
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* All CUSTOM VARIABLES you can find in "/src/styles/theme/_theme-variables.scss" file.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+** */
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                                true;
+$enable-rounded:                              true;
+$enable-gradients:                            false;
+$enable-transitions:                          false;
+$enable-prefers-reduced-motion-media-query:   true;
+$enable-grid-classes:                         true;
+$enable-pointer-cursor-for-buttons:           true;
+$enable-print-styles:                         true;
+$enable-responsive-font-sizes:                true;
+$enable-validation-icons:                     false;
+$enable-deprecation-messages:                 true;
+
+
+// Color system
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   getColor($c-white);
+$body-color:                getColor($c-black);
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      -apple-system, 'Roboto', BlinkMacSystemFont, sans-serif;
+$font-family-monospace:       -apple-system, 'Roboto', BlinkMacSystemFont, sans-serif;
+$font-family-base:            $font-family-sans-serif;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+);

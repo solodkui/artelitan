@@ -1,0 +1,41 @@
+
+// Body style
+body {
+  font-family: $f-main;
+  color: $c-black;
+  background-color: $c-white;
+  font-size: 12px;
+}
+
+// Icon style
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  fill: currentColor;
+  &:not(.has-stroke){
+    stroke-width: 0;
+  }
+}
+
+// Custom scroll
+*::-webkit-scrollbar {
+  width: 8px;
+  position: relative;
+  z-index: 999;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba($c-black, .8);
+  background-color: rgba($c-black, .3);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: $c-black;
+  box-shadow: inset 0 0 5px rgba($c-black, .8);
+  outline: none;
+}
