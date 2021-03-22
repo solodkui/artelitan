@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .c-header {
   border-bottom: 1px solid $c-white-2;
   background-color: $c-white;
@@ -11,10 +13,56 @@
     padding-top: 45px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    max-width: map.get($container-max-widths, "xl");
   }
 
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__burger {
+    display: none;
+    margin-right: 35px;
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      display: block;
+    }
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      margin-right: 30px;
+    }
+  }
+  
   &__logo {
     height: 30px;
     width: 180px;
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      width: 164px;
+      height: 27px;
+    }
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      width: 102px;
+      height: 17px;
+    }
+  }
+
+  &__search {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: none;
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      display: block;
+    }
   }
 }

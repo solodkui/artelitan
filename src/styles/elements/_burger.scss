@@ -1,0 +1,20 @@
+.e-burger {
+  cursor: pointer;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    width: 18px;
+    height: 1.5px;
+    background-color: $c-black;
+    margin-bottom: 3.75px;
+    border-radius: 1.5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

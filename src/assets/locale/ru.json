@@ -1,7 +1,9 @@
 {
   "navigation":{
     "news": "Новости",
-    "Services": ""
+    "services": "Услуги",
+    "companies": "Компании",
+    "contacts": "Контакты"
   },
   "location": {
     "title": "Населенный пункт"

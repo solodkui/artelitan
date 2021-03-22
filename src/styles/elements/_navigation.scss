@@ -1,0 +1,27 @@
+@use "sass:map";
+
+.e-navigation {
+  &__wrapper {
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      display: none;
+    }
+  }
+
+  &__item {
+    color: $c-black;
+    transition: $t-normal;
+    line-height: 16px;
+    border-bottom: 1px solid transparent;
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $c-blue;
+      border-color: $c-blue;
+    }
+  }
+}

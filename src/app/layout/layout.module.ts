@@ -6,9 +6,10 @@ import { SharedModule } from '../shared/shared.module';
 import { LayoutRoutingModule } from './layout.routing.module';
 import { NavigationComponent } from './header/navigation/navigation.component';
 import { LocationComponent } from './header/location/location.component';
+import { BurgerComponent } from './header/burger/burger.component';
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, NavigationComponent, LocationComponent],
+  declarations: [LayoutComponent, HeaderComponent, NavigationComponent, LocationComponent, BurgerComponent],
   imports: [
     CommonModule,
     SharedModule,

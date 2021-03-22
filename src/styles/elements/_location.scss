@@ -1,7 +1,10 @@
+@use "sass:map";
+
 .e-location {
   &__wrapper {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   &__icon {
@@ -13,11 +16,18 @@
   &__title {
     line-height: 1.3;
     font-weight: normal;
-    cursor: pointer;
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      display: none;
+    }
   }
 
   &__arrow {
     margin-left: 7px;
     cursor: pointer;
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      display: none;
+    }
   }
 }
