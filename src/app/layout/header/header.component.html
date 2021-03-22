@@ -1,12 +1,21 @@
-<header class="c-header__wrapper container">
-  <!-- Logo -->
-  <img
-    class="c-header__logo"
-    src="assets/artelitan-logo.png"
-    alt="artelitan-logo"
-  />
+<header class="c-header__wrapper container-fluid">
+  <div class="c-header__left">
+    <!-- Burger -->
+    <div class="c-header__burger">
+      <app-burger></app-burger>
+    </div>
+    <!-- Logo -->
+    <img
+      class="c-header__logo"
+      src="assets/artelitan-logo.png"
+      alt="artelitan-logo"
+    />
+  </div>
   <!-- Navigations -->
   <app-navigation></app-navigation>
   <!-- Locations -->
-  <app-location></app-location>
+  <div class="c-header__right">
+    <svg class="icon c-header__search"><use xlink:href="#icon-search"></use></svg>
+    <app-location></app-location>
+  </div>
 </header>
