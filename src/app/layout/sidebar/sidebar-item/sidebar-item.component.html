@@ -1,0 +1,13 @@
+<div class="e-sidebar-item__wrapper">
+  <div class="e-sidebar-item__content">
+    <div class="e-sidebar-item__date">
+      {{ data.created | date}}
+    </div>
+    <div class="e-sidebar-item__title">
+      {{ data.title }}
+    </div>
+  </div>
+  <a class="e-sidebar-item__link" target="_blank" [href]="data.sourceUrl">
+    <app-e-circle></app-e-circle>
+  </a>
+</div>

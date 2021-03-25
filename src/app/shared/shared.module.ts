@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { MissingTranslationHandler, MissingTranslationHandlerParams, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from 'src/environments/environment';
+import { ECircleComponent } from './elements/e-circle/e-circle.component';
+import { CSearchComponent } from './components/c-search/c-search.component';
+import { ECheckboxComponent } from './elements/e-checkbox/e-checkbox.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(
@@ -20,9 +24,15 @@ export class MissingTranslationService implements MissingTranslationHandler {
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ECircleComponent,
+    CSearchComponent,
+    ECheckboxComponent
+  ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -34,8 +44,11 @@ export class MissingTranslationService implements MissingTranslationHandler {
     })
   ],
   exports: [
-    TranslateModule
-  ]
+    TranslateModule,
+    ECircleComponent,
+    CSearchComponent,
+    ECheckboxComponent
+  ],
 })
 
 export class SharedModule { }

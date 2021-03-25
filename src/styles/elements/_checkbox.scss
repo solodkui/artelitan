@@ -1,0 +1,47 @@
+.e-checkbox {
+  display: block;
+
+  &__wrapper {
+    display: flex;
+    margin: 0;
+  }  
+
+  &__block {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  &__input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $c-blue;
+    border-radius: 5px;
+    background-color: $c-white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:checked {
+      background-color: $c-blue;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 14px;
+    height: 10px;
+    fill: $c-white;
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    margin-left: 12px;
+  }
+}

@@ -1,0 +1,51 @@
+@use "sass:map";
+
+.c-sidebar {
+  display: block;
+  width: 282px;
+
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 45px 0;
+    color: $c-blue;
+    cursor: default;
+  }
+
+  &__news-item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__all-news {
+    color: $c-blue-light;
+    font-size: 14px;
+    line-height: 19px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: $t-normal;
+  }
+
+  &__advertising {
+    margin-top: 60px;
+
+    &__item {
+      border-radius: 30px;
+      overflow: hidden;
+      height: 305px;
+      background-color: #C4C4C4;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

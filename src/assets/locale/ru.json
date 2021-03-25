@@ -7,5 +7,24 @@
   },
   "location": {
     "title": "Населенный пункт"
+  },
+  "sidebar": {
+    "title": "Последние новости",
+    "allNews": "Все новости"
+  },
+  "search": {
+    "placeholder": "Поиск...",
+    "titles": {
+      "selectSiteSection": "Выбрать раздел сайта",
+      "selectSiteServices": "Выбрать раздел услуг"
+    },
+    "items": {
+      "news": "Новости",
+      "services": "Услуги",
+      "companies": "Компании"
+    }
+  },
+  "main": {
+    "title": "Популярные категории"
   }
 }

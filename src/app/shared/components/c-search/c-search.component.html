@@ -1,0 +1,63 @@
+<div class="c-search__wrapper">
+  <div class="c-search__container">
+    <!-- Input -->
+    <input
+      type="text"
+      class="c-search__input"
+      [placeholder]="'search.placeholder' | translate"
+    />
+    <!-- Config button -->
+    <svg
+      class="icon c-search__config"
+      (click)="showFilter = !showFilter"
+      [class.c-search__config--active]="showFilter"
+    >
+      <use xlink:href="#icon-config"></use>
+    </svg>
+
+    <!-- Filters -->
+    <form class="c-search__filters" [formGroup]="searchForm" *ngIf="showFilter">
+        <div class="c-search__filters__left">
+          <div class="c-search__filters__title">
+            {{ "search.titles.selectSiteSection" | translate }}
+          </div>
+          <div class="c-search__filters__item">
+            <app-e-checkbox
+              [title]="'search.items.news' | translate"
+              controlName="newsPage"
+            ></app-e-checkbox>
+          </div>
+          <div class="c-search__filters__item">
+            <app-e-checkbox
+              [title]="'search.items.services' | translate"
+              controlName="servicesPage"
+            ></app-e-checkbox>
+          </div>
+          <div class="c-search__filters__item">
+            <app-e-checkbox
+              [title]="'search.items.companies' | translate"
+              controlName="companiesPage"
+            ></app-e-checkbox>
+          </div>
+        </div>
+        <div class="c-search__filters__right">
+          <div class="c-search__filters__content">
+            <div class="c-search__filters__title">
+              {{ "search.titles.selectSiteServices" | translate }}
+            </div>
+            <div
+              class="c-search__filters__item"
+              *ngFor="let categoryItem of categoryList"
+            >
+              <app-e-checkbox
+                [title]="categoryItem.name"
+                [controlName]="categoryItem.rootCategoryId"
+              ></app-e-checkbox>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
+  <!-- Search button -->
+  <app-e-circle type="search" [blue]="true"></app-e-circle>
+</div>

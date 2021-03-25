@@ -4,5 +4,6 @@ export const environmentCommon = {
     suffix: '.json',
     locales: ['en', 'ru'],
     defaultLocale: 'ru',
-  }
+  },
+  api: 'https://webapp-210112164101.azurewebsites.net/api/'
 };

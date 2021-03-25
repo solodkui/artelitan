@@ -1,0 +1,30 @@
+.e-sidebar-item {
+  display: block;
+  background-color: $c-silver;
+  border-radius: 30px;
+  padding: 30px 20px;
+  cursor: default;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    margin-right: 21px;
+  }
+
+  &__date {
+    color: $c-grey;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 11px;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

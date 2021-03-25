@@ -1,0 +1,51 @@
+.e-circle {
+  display: block;
+
+  &__wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid $c-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: $t-normal;
+
+    &:hover {
+      background-color: $c-blue;
+
+      .e-circle__icon {
+        fill: $c-white;
+      }
+    }
+
+    &--blue {
+      background-color: $c-blue;
+
+      &:hover {
+        background-color: $c-white;
+  
+        .e-circle__icon {
+          fill: $c-blue;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    transition: $t-normal;
+
+    &--arrow-big {
+      fill: $c-blue;
+      width: 8px;
+      height: 7px;
+    }
+
+    &--search {
+      fill: $c-white;
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

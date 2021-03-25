@@ -1,0 +1,11 @@
+<div class="e-circle__wrapper" [class.e-circle__wrapper--blue]="blue">
+  <ng-container [ngSwitch]="type">
+    <svg *ngSwitchCase="'search'" class="icon e-circle__icon e-circle__icon--search">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+    <svg *ngSwitchDefault class="icon e-circle__icon e-circle__icon--arrow-big">
+      <use xlink:href="#icon-arrow-big"></use>
+    </svg>
+  </ng-container>
+</div>
+

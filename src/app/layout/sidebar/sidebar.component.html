@@ -1,0 +1,22 @@
+<aside class="c-sidebar__wrapper">
+  <h3 class="c-sidebar__title">
+    {{ "sidebar.title" | translate }}
+  </h3>
+
+  <!-- News -->
+  <div class="c-sidebar__news-item" *ngFor="let newsItem of newsList">
+    <app-sidebar-item [data]="newsItem"></app-sidebar-item>
+  </div>
+
+  <!-- All news link -->
+  <a class="c-sidebar__all-news">
+    {{ "sidebar.allNews" | translate }}
+  </a>
+
+  <!-- Advertising -->
+  <div class="c-sidebar__advertising">
+    <div class="c-sidebar__advertising__item">Реклама</div>
+    <div class="c-sidebar__advertising__item">Реклама</div>
+    <div class="c-sidebar__advertising__item">Реклама</div>
+  </div>
+</aside>
