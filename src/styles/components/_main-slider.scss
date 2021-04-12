@@ -1,0 +1,44 @@
+.c-main-slider {
+  padding-bottom: 60px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    mask-border-width: 592px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    border: 1px solid $c-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &__icon {
+      width: 8.15px;
+      height: 4.18px;
+
+      &--left {
+        transform: rotate(90deg);
+      }
+
+      &--right {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
