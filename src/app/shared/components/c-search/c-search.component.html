@@ -17,6 +17,7 @@
 
     <!-- Filters -->
     <form class="c-search__filters" [formGroup]="searchForm" *ngIf="showFilter">
+      <div class="c-search__filters__wrapper">
         <div class="c-search__filters__left">
           <div class="c-search__filters__title">
             {{ "search.titles.selectSiteSection" | translate }}
@@ -56,6 +57,7 @@
             </div>
           </div>
         </div>
+      </div>
     </form>
   </div>
   <!-- Search button -->

@@ -37,7 +37,9 @@
   &__list {
     position: absolute;
     top: calc(100% + 5px);
+    right: 0;
     width: 100%;
+    min-width: 170px;
     box-shadow: $bs-normal;
     list-style-type: none;
     background-color: $c-white;

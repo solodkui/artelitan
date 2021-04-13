@@ -8,14 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class MainSliderComponent {
   swiper: any;
 
-  onSwiper(swiper) {
+  onSwiper(swiper: any): void {
     console.log(swiper);
     this.swiper = swiper;
     swiper.slideNext();
   }
-  onSlideChange() {
-    console.log('slide change');
-  }
+
+  onSlideChange(): void {}
 
   next(): void {
     this.swiper.slideNext();
