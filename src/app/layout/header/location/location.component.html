@@ -1,4 +1,9 @@
-<div class="e-location__wrapper" (click)="toggleOpenCloseLocationList()">
+<div
+  appClickOutside
+  class="e-location__wrapper"
+  (click)="toggleOpenCloseLocationList()"
+  (clickOutside)="showList = false"
+>
   <svg class="icon e-location__icon">
     <use xlink:href="#icon-location"></use>
   </svg>

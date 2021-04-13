@@ -8,6 +8,7 @@ import { ECircleComponent } from './elements/e-circle/e-circle.component';
 import { CSearchComponent } from './components/c-search/c-search.component';
 import { ECheckboxComponent } from './elements/e-checkbox/e-checkbox.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClickOutsideDirective } from './directives/outside.directive';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(
@@ -27,7 +28,8 @@ export class MissingTranslationService implements MissingTranslationHandler {
   declarations: [
     ECircleComponent,
     CSearchComponent,
-    ECheckboxComponent
+    ECheckboxComponent,
+    ClickOutsideDirective
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ export class MissingTranslationService implements MissingTranslationHandler {
     TranslateModule,
     ECircleComponent,
     CSearchComponent,
-    ECheckboxComponent
+    ECheckboxComponent,
+    ClickOutsideDirective
   ],
 })
 
