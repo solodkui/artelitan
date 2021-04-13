@@ -1,19 +1,23 @@
+@use "sass:map";
+
 .c-main-slider {
   padding-bottom: 60px;
 
+  @media (max-width: map.get($container-max-widths, "lg")) {
+    display: none;
+  }
+
   &__wrapper {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   &__content{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    mask-border-width: 592px;
-    padding-left: 24px;
-    padding-right: 24px;
+    margin: 0 25px;
+    overflow: hidden;
+    z-index: 100;
   }
 
   &__arrow {
@@ -28,9 +32,14 @@
     align-items: center;
     cursor: pointer;
 
+    // &::after {
+    //   content: '';
+    //   display: none;
+    // }
+
     &__icon {
-      width: 8.15px;
-      height: 4.18px;
+      font-size: 14px;
+      color: $c-blue;
 
       &--left {
         transform: rotate(90deg);

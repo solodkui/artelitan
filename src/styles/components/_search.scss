@@ -39,12 +39,13 @@
 
   &__config {
     position: absolute;
-    right: 20px;
+    right: 10px;
     fill: $c-silver-2;
-    width: 14px;
-    height: 14px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     transition: $t-normal;
+    padding: 13px;
 
     &:hover {
       fill: $c-blue-light;
@@ -66,10 +67,12 @@
     display: flex;
     justify-content: space-between;
     max-height: 340px;
+    z-index: 999;
 
     &__content {
       overflow-y: scroll;
       height: 100%;
+      padding-left: 5px;
     }
 
     &__title {
@@ -95,7 +98,7 @@
     }
 
     &__right {
-      padding-left: 20px;
+      padding-left: 15px;
     }
 
     &__item {

@@ -1,6 +1,8 @@
 @use "sass:map";
 
 .e-location {
+  position: relative;
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -23,11 +25,40 @@
   }
 
   &__arrow {
-    margin-left: 7px;
+    margin-left: 9px;
     cursor: pointer;
+    font-size: 8px;
 
     @media (max-width: map.get($container-max-widths, "sm")) {
       display: none;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 100%;
+    box-shadow: $bs-normal;
+    list-style-type: none;
+    background-color: $c-white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__item {
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    transition: $t-normal;
+
+    &:hover {
+      background-color: $c-white-2;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

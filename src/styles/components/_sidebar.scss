@@ -4,6 +4,10 @@
   display: block;
   width: 282px;
 
+  @media (max-width: map.get($container-max-widths, "xl")) {
+    display: none;
+  }
+
   &__title {
     font-weight: bold;
     font-size: 16px;

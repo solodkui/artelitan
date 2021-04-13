@@ -1,10 +1,40 @@
 <div class="c-main-slider__wrapper">
-  <div class="c-main-slider__arrow">
-    <svg class="icon c-main-slider__arrow__icon c-main-slider__arrow__icon--left">
+  <div class="c-main-slider__arrow" (click)="prev()">
+    <svg
+      class="icon c-main-slider__arrow__icon c-main-slider__arrow__icon--left"
+    >
       <use xlink:href="#icon-arrow"></use>
     </svg>
   </div>
-  <div class="c-main-slider__content">
+
+  <swiper
+    [slidesPerView]="4"
+    [spaceBetween]="24"
+    (swiper)="onSwiper($event)"
+    [loop]="true"
+    (slideChange)="onSlideChange()"
+    class="c-main-slider__content"
+  >
+    <ng-template swiperSlide>
+      <img src="assets/images/slider/1.png" alt="slide1" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="assets/images/slider/2.png" alt="slide2" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="assets/images/slider/3.png" alt="slide3" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="assets/images/slider/4.png" alt="slide4" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="assets/images/slider/1.png" alt="slide5" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="assets/images/slider/2.png" alt="slide6" />
+    </ng-template>
+  </swiper>
+  <!-- <div class="c-main-slider__content">
     <div class="c-main-slider__item">
       <img src="assets/images/slider/1.png" alt="slide1" />
     </div>
@@ -17,9 +47,11 @@
     <div class="c-main-slider__item">
       <img src="assets/images/slider/4.png" alt="slide4" />
     </div>
-  </div>
-  <div class="c-main-slider__arrow">
-    <svg class="icon c-main-slider__arrow__icon c-main-slider__arrow__icon--right">
+  </div> -->
+  <div class="c-main-slider__arrow" (click)="next()">
+    <svg
+      class="icon c-main-slider__arrow__icon c-main-slider__arrow__icon--right"
+    >
       <use xlink:href="#icon-arrow"></use>
     </svg>
   </div>

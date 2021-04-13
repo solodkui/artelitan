@@ -6,7 +6,12 @@
     "contacts": "Контакты"
   },
   "location": {
-    "title": "Населенный пункт"
+    "title": "Населенный пункт",
+    "list": {
+      "moscow": "Москва",
+      "ekaterinburg": "Екатеринбург",
+      "voronezh": "Воронеж"
+    }
   },
   "sidebar": {
     "title": "Последние новости",
