@@ -1,4 +1,8 @@
-<div class="c-search__wrapper" appClickOutside (clickOutside)="showFilter = false">
+<div
+  appClickOutside
+  class="c-search__wrapper"
+  (clickOutside)="showFilter = false"
+>
   <div class="c-search__container">
     <!-- Input -->
     <input
@@ -20,7 +24,7 @@
       <div class="c-search__filters__wrapper">
         <div class="c-search__filters__left">
           <div class="c-search__filters__title">
-            {{ "search.titles.selectSiteSection" | translate }}
+            {{ 'search.titles.selectSiteSection' | translate }}
           </div>
           <div class="c-search__filters__item">
             <app-e-checkbox
@@ -44,7 +48,7 @@
         <div class="c-search__filters__right">
           <div class="c-search__filters__content">
             <div class="c-search__filters__title">
-              {{ "search.titles.selectSiteServices" | translate }}
+              {{ 'search.titles.selectSiteServices' | translate }}
             </div>
             <div
               class="c-search__filters__item"
