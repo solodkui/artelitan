@@ -1,18 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MainComponent } from './main.component';
-import { MainRoutingModule } from './main.routing';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { MainPopularComponent } from './main-popular/main-popular.component';
 import { MainSliderComponent } from './main-slider/main-slider.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { MainRoutingModule } from './main.routing';
+import { MainComponent } from './main.component';
+import { CommonModule } from '@angular/common';
 import { SwiperModule } from 'swiper/angular';
+import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [MainComponent, MainSliderComponent],
+  declarations: [MainComponent, MainSliderComponent, MainPopularComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
     SharedModule,
-    SwiperModule
+    SwiperModule,
+    SharedModule
   ]
 })
 export class MainModule { }

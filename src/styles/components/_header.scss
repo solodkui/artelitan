@@ -23,6 +23,7 @@
   &__left {
     display: flex;
     align-items: center;
+    z-index: 10;
   }
 
   &__right {
@@ -62,10 +63,22 @@
     width: 30px;
     height: 30px;
     margin-right: 10px;
+    border: 1px solid $c-blue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     display: none;
 
     @media (max-width: map.get($container-max-widths, "sm")) {
-      display: block;
+      display: flex;
+    }
+
+    &__icon {
+      width: 14px;
+      height: 14px;
+      fill: $c-blue;
     }
   }
 }

@@ -8,11 +8,11 @@
   </div>
 
   <swiper
-    [slidesPerView]="4"
-    [spaceBetween]="24"
     (swiper)="onSwiper($event)"
     [loop]="true"
+    [breakpoints]="breakpoints"
     (slideChange)="onSlideChange()"
+    [pagination]="{ clickable: false }"
     class="c-main-slider__content"
   >
     <ng-template swiperSlide>

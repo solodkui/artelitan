@@ -1,9 +1,12 @@
+@use "sass:map";
+
 .e-sidebar-item {
   display: block;
   background-color: $c-silver;
   border-radius: 30px;
   padding: 30px 20px;
   cursor: default;
+  height: 100%;
 
   &__wrapper {
     display: flex;
@@ -13,14 +16,27 @@
 
   &__content {
     margin-right: 21px;
+
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: flex;
+    }
   }
 
   &__date {
-    color: $c-grey;
     font-weight: normal;
-    font-size: 8px;
-    line-height: 11px;
+    white-space: nowrap;
     margin-bottom: 12px;
+    line-height: 11px;
+    color: $c-grey;
+    font-size: 8px;
+
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      margin-right: 7px;
+      margin-bottom: 0;
+      padding-top: 5px;
+    }
   }
 
   &__title {
@@ -30,5 +46,9 @@
 
   &__link {
     margin-top: -15px;
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: none;
+    }
   }
 }

@@ -1,0 +1,84 @@
+<div class="c-contacts__wrapper">
+  <div class="c-contacts__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <h1 class="c-contacts__title">
+    {{ 'contacts.title' | translate }}
+  </h1>
+
+  <!-- Contact items -->
+  <ul class="c-contacts__contact">
+    <li class="c-contacts__contact__item">
+      <a href="tel:89008765555" class="c-contacts__link">
+        <div class="icon c-contacts__icon">
+          <svg class="icon c-contacts__svg">
+            <use xlink:href="#icon-smartphone"></use>
+          </svg>
+        </div>
+        <b>8 900 876 55 55</b>
+      </a>
+    </li>
+    <li class="c-contacts__contact__item">
+      <a href="mailto:info@info.ru" class="c-contacts__link">
+        <div class="icon c-contacts__icon">
+          <svg class="c-contacts__svg">
+            <use xlink:href="#icon-mail"></use>
+          </svg>
+        </div>
+        <span>info@info.ru</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Subtitle -->
+  <h2 class="c-contacts__subtitle">
+    {{ 'contacts.subtitle' | translate }}
+  </h2>
+
+  <!-- Info -->
+  <div class="c-contacts__info">
+    <span>
+      {{ 'contacts.info.1' | translate }}
+    </span>
+    <a href="mailto:info@info.ru" class="c-contacts__info__email">
+      {{ 'contacts.info.2' | translate }}
+    </a>
+    <span>
+      {{ 'contacts.info.3' | translate }}
+    </span>
+  </div>
+
+  <!-- List -->
+  <div class="c-contacts__lists">
+    <!-- Left -->
+    <ul class="c-contacts__list">
+      <li class="c-contacts__list__item">
+        {{ 'contacts.list.1' | translate }}
+      </li>
+      <li class="c-contacts__list__item">
+        {{ 'contacts.list.2' | translate }}
+      </li>
+      <li class="c-contacts__list__item">
+        {{ 'contacts.list.3' | translate }}
+      </li>
+      <li class="c-contacts__list__item">
+        {{ 'contacts.list.4' | translate }}
+      </li>
+    </ul>
+    <!-- Right -->
+    <ul class="c-contacts__list">
+      <li class="c-contacts__list__item">
+        {{ 'contacts.list.5' | translate }}
+      </li>
+      <li class="c-contacts__list__item">
+        {{ 'contacts.list.6' | translate }}
+      </li>
+      <li class="c-contacts__list__item">
+        {{ 'contacts.list.7' | translate }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -9,11 +9,27 @@ import { NewsItem } from 'src/app/interfaces/news-item';
 })
 export class SidebarComponent implements OnInit {
   newsList: Array<NewsItem> = [];
+  swiper: any;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.newsList = this.route.snapshot.data.news;
     console.log(this.newsList)
+  }
+
+  onSwiper(swiper: any): void {
+    this.swiper = swiper;
+    swiper.slideNext();
+  }
+
+  onSlideChange(): void {}
+
+  next(): void {
+    this.swiper.slideNext();
+  }
+
+  prev(): void {
+    this.swiper.slidePrev();
   }
 }

@@ -1,0 +1,40 @@
+.c-breadcrumbs {
+  display: block;
+  margin-bottom: 30px;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    color: $c-grey;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    cursor: pointer;
+    transition: $t-normal;
+
+    &:hover {
+      color: $c-blue;
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $c-blue-light;
+      position: absolute;
+      left: 6px;
+    }
+  }
+}

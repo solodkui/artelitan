@@ -1,5 +1,5 @@
 <header class="c-header__wrapper container-fluid">
-  <div class="c-header__left">
+  <a class="c-header__left" routerLink="/">
     <!-- Burger -->
     <div class="c-header__burger">
       <app-burger></app-burger>
@@ -10,12 +10,16 @@
       src="assets/artelitan-logo.png"
       alt="artelitan-logo"
     />
-  </div>
+  </a>
   <!-- Navigations -->
   <app-navigation></app-navigation>
   <!-- Locations -->
   <div class="c-header__right">
-    <svg class="icon c-header__search"><use xlink:href="#icon-search-small"></use></svg>
+    <div class="c-header__search">
+      <svg class="c-header__search__icon">
+        <use xlink:href="#icon-search"></use>
+      </svg>
+    </div>
     <app-location></app-location>
   </div>
 </header>

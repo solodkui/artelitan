@@ -1,0 +1,7 @@
+<div class="c-breadcrumbs__wrapper">
+  <div class="c-breadcrumbs__item" *ngFor="let item of list">
+    <a (click)="redirect(item.link)">
+      {{ item.title | translate }}
+    </a>
+  </div>
+</div>

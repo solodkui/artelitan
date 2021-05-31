@@ -1,0 +1,106 @@
+<footer class="c-footer__wrapper container-fluid">
+  <div class="c-footer__item">
+    <img
+      class="c-footer__logo"
+      src="assets/artelitan-logo-white.png"
+      alt="artelitan-logo-white"
+    />
+    <div class="c-footer__info">
+      <span>{{ 'footer.info.1' | translate }} &copy;</span>
+      <span> {{ ' ' + date.getFullYear() + ' ' }}</span>
+      <span>{{ 'footer.info.2' | translate }}</span>
+    </div>
+  </div>
+
+  <!-- Menu -->
+  <div class="c-footer__item">
+    <div class="c-footer__title">
+      {{ 'footer.menu.title' | translate }}
+    </div>
+    <!-- Menu list -->
+    <ul class="c-footer__list">
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link">
+          <span>{{ 'footer.menu.list.main' | translate }}</span>
+        </a>
+      </li>
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link">
+          <span>{{ 'footer.menu.list.mews' | translate }}</span>
+        </a>
+      </li>
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link">
+          <span>{{ 'footer.menu.list.services' | translate }}</span>
+        </a>
+      </li>
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link">
+          <span>{{ 'footer.menu.list.companies' | translate }}</span>
+        </a>
+      </li>
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link"
+          ><span>{{ 'footer.menu.list.contacts' | translate }}</span></a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- Information -->
+  <div class="c-footer__item">
+    <div class="c-footer__title">
+      {{ 'footer.information.title' | translate }}
+    </div>
+    <!-- Information list -->
+    <ul class="c-footer__list">
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link">
+          <span>{{ 'footer.information.list.about' | translate }}</span>
+        </a>
+      </li>
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link">
+          <span>{{ 'footer.information.list.advertisers' | translate }}</span>
+        </a>
+      </li>
+      <li class="c-footer__list__item">
+        <a href="#" class="c-footer__link"
+          ><span>
+            {{ 'footer.information.list.feedback' | translate }}
+          </span></a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contacts -->
+  <div class="c-footer__item">
+    <div class="c-footer__title">
+      {{ 'footer.contacts.title' | translate }}
+    </div>
+    <!-- Menu list -->
+    <ul class="c-footer__list">
+      <li class="c-footer__list__item">
+        <a href="tel:89008765555" class="c-footer__link">
+          <div class="icon c-footer__icon">
+            <svg class="icon c-footer__svg">
+              <use xlink:href="#icon-smartphone"></use>
+            </svg>
+          </div>
+          <span>8 900 876 55 55</span>
+        </a>
+      </li>
+      <li class="c-footer__list__item">
+        <a href="mailto:info@info.ru" class="c-footer__link">
+          <div class="icon c-footer__icon">
+            <svg class="c-footer__svg">
+              <use xlink:href="#icon-mail"></use>
+            </svg>
+          </div>
+          <span>info@info.ru</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

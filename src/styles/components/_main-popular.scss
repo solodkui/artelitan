@@ -1,0 +1,143 @@
+@use "sass:map";
+
+.c-main-popular {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 20px;
+    }
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: $c-silver;
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      flex-direction: column;
+    }
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__content {
+    padding: 0 30px 0  25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &__more {
+      @media (max-width: map.get($container-max-widths, "lg")) {
+        display: none;
+      }
+    }
+  }
+  
+  &__title {
+    line-height: 19px;
+    font-weight: 600;
+    font-size: 14px;
+    color: $c-blue;
+    max-width: 410px;
+    margin-bottom: 20px;
+    cursor: default;
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      padding-top: 30px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 180px;
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    color: $c-grey;
+    font-size: 11px;
+    line-height: 11px;
+    width: 100%;
+    cursor: default;
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 30px;
+      font-size: 8px;
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      margin-right: 30px;
+
+      @media (max-width: map.get($container-max-widths, "lg")) {
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__item {
+      margin-right: 30px;
+
+      @media (max-width: map.get($container-max-widths, "lg")) {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        @media (max-width: map.get($container-max-widths, "lg")) {
+          margin-right: 30px;
+        }
+      }
+    }
+
+    &__icon {
+      fill: $c-grey;
+
+      &--location {
+        width: 20px;
+        height: 20px;
+      }
+
+      &--eye {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  &__more {
+    justify-content: center;
+    margin-top: 60px;
+    display: flex;
+  }
+}

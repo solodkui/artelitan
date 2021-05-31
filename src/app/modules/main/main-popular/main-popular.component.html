@@ -1,0 +1,49 @@
+<section class="c-main-popular">
+  <div class="c-main-popular__wrapper">
+    <div class="c-main-popular__item" *ngFor="let item of contentList">
+      <img [src]="item.image" alt="" class="c-main-popular__image">
+
+      <div class="c-main-popular__content">
+        <div class="c-main-popular__content__wrapper">
+          <h6 class="c-main-popular__title">
+            {{ item.title }}
+          </h6>
+  
+          <div class="c-main-popular__info">
+            <div class="c-main-popular__info__wrapper">
+              <span class="c-main-popular__info__date">
+                {{ "main.popular.date" | translate }}: 
+                {{ item.date }}
+              </span>
+    
+              <span class="c-main-popular__info__item">
+                <svg class="c-main-popular__info__icon c-main-popular__info__icon--location">
+                  <use xlink:href="#icon-location"></use>
+                </svg>
+                {{ item.location }}
+              </span>
+            </div>
+  
+            <span class="c-main-popular__info__item">
+              <svg class="c-main-popular__info__icon c-main-popular__info__icon--eye">
+                <use xlink:href="#icon-eye"></use>
+              </svg>
+              {{ item.views }} {{ "main.popular.views" | translate }}
+            </span>
+          </div>
+        </div>
+        <a class="c-main-popular__content__more" target="_blank" href="#">
+          <app-e-circle></app-e-circle>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- More -->
+  <div class="c-main-popular__more" (click)="loadMore()">
+    <button class="button" type="button" [disabled]="loading">
+      <div class="button__loading rotating"></div>
+      <span>{{ 'main.popular.more' | translate}}</span>
+    </button>
+  </div>
+</section>

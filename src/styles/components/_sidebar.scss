@@ -5,7 +5,8 @@
   width: 282px;
 
   @media (max-width: map.get($container-max-widths, "xl")) {
-    display: none;
+    padding-top: 80px;
+    width: 100%;
   }
 
   &__title {
@@ -17,11 +18,45 @@
     cursor: default;
   }
 
+  &__news {
+    @media (max-width: map.get($container-max-widths, "xl")) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 30px;
+      grid-gap: 24px;
+      display: grid;
+    }
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: none;
+    }
+  }
+
+  &__swiper {
+    display: none;
+    padding-bottom: 50px;
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: block;
+    }
+  }
+
   &__news-item {
     margin-bottom: 20px;
 
+    @media (max-width: map.get($container-max-widths, "xl")) {
+      margin-bottom: 0;
+    }
+
     &:last-child {
       margin-bottom: 30px;
+
+      @media (max-width: map.get($container-max-widths, "xl")) {
+        display: none;
+      }
+
+      @media (max-width: map.get($container-max-widths, "md")) {
+        display: block;
+      }
     }
   }
 
@@ -36,6 +71,10 @@
 
   &__advertising {
     margin-top: 60px;
+
+    @media (max-width: map.get($container-max-widths, "xl")) {
+      display: none;
+    }
 
     &__item {
       border-radius: 30px;

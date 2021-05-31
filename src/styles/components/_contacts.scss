@@ -1,0 +1,158 @@
+@use "sass:map";
+
+.c-contacts {
+  &__search {
+    margin-bottom: 60px;
+  
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 16px;
+    color: $c-blue;
+  
+    @media (max-width: map.get($container-max-widths, "md")) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contact {
+    list-style-type: none;
+    margin-bottom: 100px;
+    padding-left: 0;
+    display: flex;
+  
+    @media (max-width: map.get($container-max-widths, "md")) {
+      margin-bottom: 55px;
+    }
+  
+    @media (max-width: map.get($container-max-widths, "md")) {
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      margin-left: 60px;
+  
+      @media (max-width: map.get($container-max-widths, "md")) {
+        margin-left: 0;
+      }
+
+      &:first-child {
+        margin-left: 0;
+  
+        @media (max-width: map.get($container-max-widths, "md")) {
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    transition: $t-normal;
+    align-items: center;
+    line-height: 19px;
+    color: $c-black;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+
+    &:hover {
+      text-decoration: none;
+      color: $c-blue;
+    }
+  }
+
+  &__icon {
+    background-color: $c-blue;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 12px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__svg {
+    height: 14px;
+    width: 14px;
+    fill: $c-white;
+  }
+
+  &__info {
+    margin-bottom: 60px;
+    line-height: 19px;
+    font-size: 14px;
+
+    &__email{
+      text-decoration: underline;
+      transition: $t-normal;
+      color: $c-blue-light;
+
+      &:hover {
+      text-decoration: none;
+      color: $c-blue;
+      }
+    }
+  }
+
+  &__lists {
+    display: flex;
+  
+    @media (max-width: map.get($container-max-widths, "md")) {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding-left: 18px;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-right: 150px;
+  
+      @media (max-width: map.get($container-max-widths, "md")) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__item {
+      align-items: center;
+      position: relative;
+      line-height: 19px;
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 15px;
+      cursor: default;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        background-color: $c-blue-light;
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        margin-left: -18px;
+        border-radius: 50%;
+        font-weight: bold;
+        content: ""; 
+        height: 6px;
+        width: 6px;
+      }
+    }
+  }
+}

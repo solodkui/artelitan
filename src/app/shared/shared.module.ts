@@ -9,6 +9,8 @@ import { CSearchComponent } from './components/c-search/c-search.component';
 import { ECheckboxComponent } from './elements/e-checkbox/e-checkbox.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClickOutsideDirective } from './directives/outside.directive';
+import { SvgComponent } from './components/svg/svg.component';
+import { CBreadcrumbsComponent } from './components/c-breadcrumbs/c-breadcrumbs.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(
@@ -29,7 +31,9 @@ export class MissingTranslationService implements MissingTranslationHandler {
     ECircleComponent,
     CSearchComponent,
     ECheckboxComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    SvgComponent,
+    CBreadcrumbsComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +54,9 @@ export class MissingTranslationService implements MissingTranslationHandler {
     ECircleComponent,
     CSearchComponent,
     ECheckboxComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    SvgComponent,
+    CBreadcrumbsComponent
   ],
 })
 

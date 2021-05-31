@@ -10,6 +10,8 @@ import { BurgerComponent } from './header/burger/burger.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarItemComponent } from './sidebar/sidebar-item/sidebar-item.component';
 import { SidebarResolver } from './sidebar/sidebar.resolver';
+import { FooterComponent } from './footer/footer.component';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { SidebarResolver } from './sidebar/sidebar.resolver';
     LocationComponent,
     BurgerComponent,
     SidebarComponent,
-    SidebarItemComponent
+    SidebarItemComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    SwiperModule
   ],
   providers: [
     SidebarResolver

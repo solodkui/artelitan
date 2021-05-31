@@ -1,0 +1,28 @@
+<div class="c-services-main__wrapper">
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <h1 class="c-services-main__title">
+    {{ 'services.title' | translate }}
+  </h1>
+
+  <div class="c-services-main__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <div class="c-services-main__list">
+    <div
+      class="c-services-main__item"
+      [title]="serviceMainItem.title | translate"
+      *ngFor="let serviceMainItem of serviceMainList; let i = index"
+    >
+      <img
+        [src]="serviceMainItem.image"
+        class="c-services-main__item__image"
+        [alt]="'Service main image ' + i"
+      />
+      <b class="c-services-main__item__title">
+        {{ serviceMainItem.title | translate }}
+      </b>
+    </div>
+  </div>
+</div>

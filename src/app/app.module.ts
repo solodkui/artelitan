@@ -1,11 +1,15 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { APP_INITIALIZER, Injector, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { HttpLoaderFactory, MissingTranslationService } from './shared/shared.module';
+import { APP_INITIALIZER, Injector, LOCALE_ID, NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { appInitializerFactory } from './initializer-factory';
-import { HttpLoaderFactory, MissingTranslationService, SharedModule } from './shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+import { AppComponent } from './app.component';
+
+registerLocaleData  (localeRu, 'ru');
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { HttpLoaderFactory, MissingTranslationService, SharedModule } from './sh
       useFactory: appInitializerFactory,
       deps: [TranslateService, Injector],
       multi: true
-    }
+    },
+    { provide: LOCALE_ID, useValue: 'ru' },
   ],
   bootstrap: [AppComponent],
 })

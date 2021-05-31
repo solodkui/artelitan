@@ -3,7 +3,6 @@
 body {
   font-family: $f-main;
   font-size: 12px;
-  height: 3000px;
 }
 
 // Icon style
@@ -44,11 +43,19 @@ body {
     padding-top: 60px;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: map.get($container-max-widths, "xl")) {
+      flex-direction: column;
+    }
   }
 
   &__content {
     width: 100%;
     max-width: 792px;
+
+    @media (max-width: map.get($container-max-widths, "xl")) {
+      max-width: 100%;
+    }
   }
 }
 
@@ -58,4 +65,26 @@ h1 {
   line-height: 34px;
   color: $c-blue;
   font-weight: bold;
+
+  @media (max-width: map.get($container-max-widths, "sm")) {
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+.swiper-pagination-bullet {
+  background-color: $c-grey;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $c-blue;
 }

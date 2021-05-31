@@ -1,0 +1,49 @@
+@use "sass:map";
+
+.c-services-main {
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__search {
+    margin-bottom: 60px;
+  
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    transition: $t-normal;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &__title {
+      position: absolute;
+      line-height: 19px;
+      max-width: 107px;
+      font-size: 14px;
+      width: 100%;
+      left: 20px;
+      top: 30px;
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}

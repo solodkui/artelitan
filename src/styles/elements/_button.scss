@@ -1,0 +1,48 @@
+.button {
+  position: relative;
+  border: 1px solid $c-blue;
+  outline: none;
+  border-radius: 100px;
+  padding: 20px 35px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: $c-blue;
+  background-color: $c-white;
+  transition: $t-normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: $c-blue;
+    color: $c-white;
+  }
+
+  &:disabled {
+    border-color: $c-grey;
+    color: $c-grey;
+
+    &:hover {
+      background-color: $c-white;
+    }
+
+    .button__loading {
+      width: 20px;
+      height: 20px;
+      opacity: 1;
+    }
+  }
+
+  &__loading {
+    transition: $t-normal;
+    margin-right: 10px;
+    right: - 50px;
+    width: 0;
+    height: 0;
+    border: 2px solid $c-blue;
+    border-top-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+  }
+}
