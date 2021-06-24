@@ -1,0 +1,82 @@
+<section class="c-companies__wrapper">
+  <!-- Breadcrumbs -->
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <!-- Title -->
+  <h1 class="c-companies__title">
+    {{ 'companies.title' | translate }}
+  </h1>
+
+  <!-- Search -->
+  <div class="c-companies__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <!-- Header -->
+  <div class="c-companies__header">
+    <!-- Filter -->
+    <div class="c-companies__filter">
+      <div class="c-companies__filter__text">
+        {{ 'companies.filter' | translate }}
+      </div>
+      <div class="c-companies__filter__icon">
+        <svg class="c-companies__filter__svg">
+          <use xlink:href="#icon-config"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="c-companies__header__block">
+      <!-- Sort -->
+      <div class="c-companies__sort">
+        <div class="c-companies__sort__text">
+          {{ 'companies.sort' | translate }}
+        </div>
+        <div class="c-companies__sort__icon">
+          <svg class="c-companies__sort__svg">
+            <use xlink:href="#icon-arrow"></use>
+          </svg>
+        </div>
+      </div>
+      <!-- Schedule -->
+      <div class="c-companies__schedule">
+        <div
+          class="c-companies__schedule__icon"
+          (click)="activeCompaniesContentTypes = companiesContentTypes.BLOCK"
+          [class.c-companies__schedule__icon--active]="
+            activeCompaniesContentTypes === companiesContentTypes.BLOCK
+          "
+        >
+          <svg class="c-companies__schedule__svg">
+            <use xlink:href="#icon-schedule"></use>
+          </svg>
+        </div>
+        <div
+          class="c-companies__schedule__icon"
+          (click)="activeCompaniesContentTypes = companiesContentTypes.LIST"
+          [class.c-companies__schedule__icon--active]="
+            activeCompaniesContentTypes === companiesContentTypes.LIST
+          "
+        >
+          <svg class="c-companies__schedule__svg">
+            <use xlink:href="#icon-schedule-with-arrow"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- List -->
+  <div class="c-companies__list">
+    <app-companies-list
+      [list]="companiesList"
+      [type]="activeCompaniesContentTypes"
+    ></app-companies-list>
+  </div>
+
+  <!-- Footer -->
+  <div class="c-companies__footer" *ngIf="!full">
+    <button class="button" type="button" (click)="loadMore()">
+      <span> Показать больше </span>
+    </button>
+  </div>
+</section>

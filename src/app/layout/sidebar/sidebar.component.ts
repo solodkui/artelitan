@@ -15,7 +15,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.newsList = this.route.snapshot.data.news;
-    console.log(this.newsList)
   }
 
   onSwiper(swiper: any): void {

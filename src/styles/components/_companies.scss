@@ -1,0 +1,135 @@
+@use "sass:map";
+
+.c-companies {
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__search {
+    margin-bottom: 60px;
+
+    @media (max-width: map.get($container-max-widths, 'md')) {
+      display: none;
+    }
+  }
+
+  &__header {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    line-height: 19px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+
+    &__block {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  &__filter {
+    transition: $t-normal;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    fill: $c-blue;
+
+    &:hover {
+      fill: $c-white;
+      color: $c-blue;
+
+      & > .c-companies__filter__icon {
+        background-color: $c-blue;
+      }
+    }
+
+    &__text {
+      margin-right: 10px;
+    }
+
+    &__icon {
+      border: 1px solid $c-blue;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      display: flex;
+      height: 40px;
+      width: 40px;
+    }
+
+    &__svg {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  &__sort {
+    transition: $t-normal;
+    align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+    display: flex;
+    fill: $c-black;
+
+    &:hover {
+      color: $c-blue;
+      fill: $c-blue;
+    }
+
+    &__text {
+      margin-right: 5px;
+    }
+
+    &__icon {
+      align-items: center;
+      display: flex;
+    }
+
+    &__svg {
+      height: 10px;
+      width: 10px;
+    }
+  }
+
+  &__schedule {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    display: grid;
+
+    &__icon {
+      border: 1px solid $c-blue;
+      justify-content: center;
+      transition: $t-normal;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      fill: $c-blue;
+      height: 40px;
+      width: 40px;
+
+      &:hover {
+        background-color: $c-blue;
+        fill: $c-white;
+      }
+
+      &--active {
+        background-color: $c-blue;
+        fill: $c-white;
+        cursor: default;
+      }
+    }
+
+    &__svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__footer {
+    justify-content: center;
+    margin-top: 60px;
+    display: flex;
+  }
+}

@@ -20,27 +20,27 @@
     <!-- Menu list -->
     <ul class="c-footer__list">
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link">
+        <a (click)="scrollTop()" routerLink="/" class="c-footer__link">
           <span>{{ 'footer.menu.list.main' | translate }}</span>
         </a>
       </li>
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link">
-          <span>{{ 'footer.menu.list.mews' | translate }}</span>
+        <a (click)="scrollTop()" routerLink="/news" class="c-footer__link">
+          <span>{{ 'footer.menu.list.news' | translate }}</span>
         </a>
       </li>
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link">
+        <a (click)="scrollTop()" routerLink="/services" class="c-footer__link">
           <span>{{ 'footer.menu.list.services' | translate }}</span>
         </a>
       </li>
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link">
+        <a (click)="scrollTop()" routerLink="/companies" class="c-footer__link">
           <span>{{ 'footer.menu.list.companies' | translate }}</span>
         </a>
       </li>
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link"
+        <a (click)="scrollTop()" routerLink="/contacts" class="c-footer__link"
           ><span>{{ 'footer.menu.list.contacts' | translate }}</span></a
         >
       </li>
@@ -55,17 +55,21 @@
     <!-- Information list -->
     <ul class="c-footer__list">
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link">
+        <a (click)="scrollTop()" routerLink="/about" class="c-footer__link">
           <span>{{ 'footer.information.list.about' | translate }}</span>
         </a>
       </li>
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link">
+        <a
+          (click)="scrollTop()"
+          routerLink="/advertisers"
+          class="c-footer__link"
+        >
           <span>{{ 'footer.information.list.advertisers' | translate }}</span>
         </a>
       </li>
       <li class="c-footer__list__item">
-        <a href="#" class="c-footer__link"
+        <a (click)="scrollTop()" routerLink="/feedback" class="c-footer__link"
           ><span>
             {{ 'footer.information.list.feedback' | translate }}
           </span></a

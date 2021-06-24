@@ -1,0 +1,38 @@
+<div
+  class="c-companies-list__wrapper"
+  [class.c-companies-list__wrapper--block]="
+    type === companiesContentTypes.BLOCK
+  "
+>
+  <div class="c-companies-list__item" *ngFor="let item of list; let i = index">
+    <!-- Image -->
+    <div class="c-companies-list__image-block">
+      <img
+        [alt]="'Company image ' + i"
+        class="c-companies-list__image"
+        [src]="item.logoUrl || 'https://via.placeholder.com/250'"
+      />
+    </div>
+    <!-- Content -->
+    <div class="c-companies-list__content">
+      <!-- Info -->
+      <div class="c-companies-list__info">
+        <!-- Title -->
+        <h6 class="c-companies-list__title" [title]="item.legalName">
+          {{ item.legalName }}
+        </h6>
+        <!-- Description -->
+        <div class="c-companies-list__description" *ngIf="item.description">
+          <div
+            class="c-companies-list__description__item"
+            *ngFor="let itemDescriptionItem of item.description.split('. ')"
+          >
+            <span>{{ itemDescriptionItem }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- Arrow -->
+      <app-e-circle></app-e-circle>
+    </div>
+  </div>
+</div>

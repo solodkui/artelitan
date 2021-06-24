@@ -1,0 +1,32 @@
+@use "sass:map";
+
+.c-about {
+  &__search {
+    margin-bottom: 30px;
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      font-size: 25px;
+      line-height: 34px;
+    }
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      text-align: start;
+      font-size: 25px;
+      line-height: 34px;
+    }
+  }
+
+  &__content {
+    line-height: 19px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+}

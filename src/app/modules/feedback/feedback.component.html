@@ -1,0 +1,134 @@
+<div class="c-feedback__wrapper">
+  <!-- Search -->
+  <div class="c-feedback__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <!-- Header -->
+  <div class="c-feedback__header">
+    <!-- Title -->
+    <h1 class="c-feedback__title">
+      {{ 'feedback.title' | translate }}
+    </h1>
+    <!-- Info -->
+    <p class="c-feedback__info">
+      <span>{{ 'feedback.info.1' | translate }}</span>
+      <a href="mailto:info@info.ru" class="g-link">info@info.ru</a>
+      <span>{{ 'feedback.info.2' | translate }}</span>
+    </p>
+  </div>
+
+  <!-- Form -->
+  <form
+    class="c-feedback__form"
+    [formGroup]="feedbackForm"
+    (ngSubmit)="submit()"
+  >
+    <!-- Fullname -->
+    <label class="c-feedback__item">
+      <span class="c-feedback__item__title">
+        {{ 'feedback.form.fullname.title' | translate }}:
+      </span>
+      <input
+        type="text"
+        class="c-feedback__input"
+        formControlName="fullname"
+        [class.c-feedback__input--valid]="isControlValid('fullname')"
+        [placeholder]="'feedback.form.fullname.placeholder' | translate"
+        [class.c-feedback__input--invalid]="isControlInvalid('fullname')"
+      />
+    </label>
+    <!-- Phone -->
+    <div class="c-feedback__item">
+      <span class="c-feedback__item__title">
+        {{ 'feedback.form.phone' | translate }}:
+      </span>
+      <ngx-intl-tel-input
+        [cssClass]="
+          'c-feedback__input ' +
+          (isControlValid('phone') ? 'c-feedback__input--valid' : '') +
+          (isControlInvalid('phone') ? 'c-feedback__input--invalid' : '')
+        "
+        [searchCountryField]="[
+          SearchCountryField.Iso2,
+          SearchCountryField.Name
+        ]"
+        [maxLength]="15"
+        [phoneValidation]="true"
+        [enablePlaceholder]="true"
+        [searchCountryFlag]="true"
+        [selectFirstCountry]="false"
+        [enableAutoCountrySelect]="true"
+        [separateDialCode]="separateDialCode"
+        [selectedCountryISO]="CountryISO.Russia"
+        [preferredCountries]="preferredCountries"
+        [numberFormat]="PhoneNumberFormat.National"
+        name="phone"
+        formControlName="phone"
+      >
+      </ngx-intl-tel-input>
+    </div>
+    <!-- Email -->
+    <label class="c-feedback__item">
+      <span class="c-feedback__item__title">
+        {{ 'feedback.form.email' | translate }}:
+      </span>
+      <input
+        type="email"
+        formControlName="email"
+        class="c-feedback__input"
+        placeholder="example@gmail.com"
+        [class.c-feedback__input--valid]="isControlValid('email')"
+        [class.c-feedback__input--invalid]="isControlInvalid('email')"
+      />
+    </label>
+    <!-- Text -->
+    <label class="c-feedback__item c-feedback__item--textarea">
+      <span class="c-feedback__item__title c-feedback__item__title--textarea">
+        {{ 'feedback.form.text.title' | translate }}:
+      </span>
+      <textarea
+        class="c-feedback__textarea"
+        formControlName="text"
+        [class.c-feedback__textarea--valid]="isControlValid('text')"
+        [placeholder]="'feedback.form.text.placeholder' | translate"
+        [class.c-feedback__textarea--invalid]="isControlInvalid('text')"
+      ></textarea>
+    </label>
+    <!-- Uploader -->
+    <div class="c-feedback__uploader">
+      <span class="c-feedback__uploader__text">
+        {{ 'feedback.form.uploader.text' | translate }}:
+      </span>
+      <label class="c-feedback__uploader__label">
+        <input
+          type="file"
+          style="display: none"
+          (change)="upload($event)"
+          accept="image/jpeg, image/png"
+        />
+        <div class="button c-feedback__button">
+          <span>
+            {{ 'feedback.form.uploader.button' | translate }}
+          </span>
+        </div>
+      </label>
+      <span class="c-feedback__uploader__info">
+        {{ 'feedback.form.uploader.info' | translate }}
+      </span>
+    </div>
+    <!-- Footer -->
+    <div class="c-feedback__footer">
+      <button
+        type="submit"
+        [disabled]="loading"
+        class="button button--dark c-feedback__button"
+      >
+        <div class="button__loading rotating"></div>
+        <span>
+          {{ 'feedback.form.submit' | translate }}
+        </span>
+      </button>
+    </div>
+  </form>
+</div>

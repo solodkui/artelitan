@@ -20,16 +20,17 @@
   }
 
   &__arrow {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
-    border-radius: 50%;
     border: 1px solid $c-blue;
-    display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 60px;
+    border-radius: 50%;
+    min-height: 40px;
+    min-width: 40px;
     cursor: pointer;
+    display: flex;
+    height: 40px;
+    width: 40px;
 
     &__icon {
       font-size: 10px;

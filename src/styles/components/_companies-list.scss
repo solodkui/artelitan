@@ -1,0 +1,83 @@
+.c-companies-list {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+
+    &--block {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    background-color: $c-silver;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+  }
+
+  &__image-block {
+    width: 100%;
+    max-width: 175px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px 24px;
+    display: flex;
+    width: 100%;
+  }
+
+  &__info {
+    margin-right: 10px;
+    height: 100%;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    line-height: 19px;
+    font-weight: 600;
+    font-size: 14px;
+    color: $c-blue;
+    cursor: default;
+  }
+
+  &__description {
+    line-height: 16px;
+    font-size: 12px;
+    cursor: default;
+
+    &__item {
+      display: inline-block;
+      padding-right: 16px;
+      align-items: center;
+      position: relative;
+      margin-bottom: 6px;
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+
+      &::after {
+        background-color: $c-blue-light;
+        display: inline-block;
+        position: absolute;
+        margin-left: -18px;
+        border-radius: 50%;
+        font-weight: bold;
+        content: '';
+        height: 4px;
+        width: 4px;
+        right: 5px;
+        top: calc(50% - 2px);
+      }
+    }
+  }
+}

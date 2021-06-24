@@ -30,6 +30,32 @@ const routes: Routes = [
             (m) => m.ContactsModule
           ),
       },
+      {
+        path: 'feedback',
+        loadChildren: () =>
+          import('../modules/feedback/feedback.module').then(
+            (m) => m.FeedbackModule
+          ),
+      },
+      {
+        path: 'about',
+        loadChildren: () =>
+          import('../modules/about/about.module').then((m) => m.AboutModule),
+      },
+      {
+        path: 'advertisers',
+        loadChildren: () =>
+          import('../modules/advertisers/advertisers.module').then(
+            (m) => m.AdvertisersModule
+          ),
+      },
+      {
+        path: 'companies',
+        loadChildren: () =>
+          import('../modules/companies/companies.module').then(
+            (m) => m.CompaniesModule
+          ),
+      },
     ],
   },
   { path: '**', redirectTo: 'main', pathMatch: 'full' },

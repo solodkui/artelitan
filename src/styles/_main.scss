@@ -60,11 +60,12 @@ body {
 }
 
 h1 {
-  margin: 0;
-  font-size: 25px;
-  line-height: 34px;
-  color: $c-blue;
   font-weight: bold;
+  line-height: 34px;
+  font-size: 25px;
+  cursor: default;
+  color: $c-blue;
+  margin: 0;
 
   @media (max-width: map.get($container-max-widths, "sm")) {
     font-size: 20px;
@@ -87,4 +88,18 @@ h1 {
 
 .swiper-pagination-bullet-active {
   background-color: $c-blue;
+}
+
+.g-link {
+  color: $c-blue-light;
+  transition: $t-normal;
+
+  &:hover {
+    text-decoration: none;
+    color: $c-blue;
+  }
+}
+
+.color-blue {
+  color: $c-blue;
 }

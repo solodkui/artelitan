@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutModule } from './modules/about/about.module';
 
 registerLocaleData  (localeRu, 'ru');
 
@@ -19,6 +21,7 @@ registerLocaleData  (localeRu, 'ru');
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -28,6 +31,7 @@ registerLocaleData  (localeRu, 'ru');
       missingTranslationHandler: { provide: MissingTranslationHandler, useClass: MissingTranslationService },
       useDefaultLang: false,
     }),
+    AboutModule,
   ],
   providers: [
     {
