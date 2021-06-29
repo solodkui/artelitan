@@ -1,0 +1,62 @@
+<div class="c-companies-products__wrapper">
+  <!-- Header -->
+  <div class="c-companies-products__header">
+    <app-c-filter></app-c-filter>
+    <app-c-sort></app-c-sort>
+  </div>
+  <!-- List -->
+  <ul class="c-companies-products__list">
+    <li class="c-companies-products__item" *ngFor="let item of productList">
+      <img [src]="item.image" alt="" class="c-companies-products__image" />
+
+      <div class="c-companies-products__content">
+        <div class="c-companies-products__content__wrapper">
+          <h6 class="c-companies-products__title">
+            {{ item.title }}
+          </h6>
+
+          <div class="c-companies-products__info">
+            <div class="c-companies-products__info__wrapper">
+              <span class="c-companies-products__info__date">
+                {{ 'main.popular.date' | translate }}:
+                {{ item.date }}
+              </span>
+
+              <span class="c-companies-products__info__item">
+                <svg
+                  class="
+                    c-companies-products__info__icon
+                    c-companies-products__info__icon--location
+                  "
+                >
+                  <use xlink:href="#icon-location"></use>
+                </svg>
+                {{ item.location }}
+              </span>
+            </div>
+
+            <span class="c-companies-products__info__item">
+              <svg
+                class="
+                  c-companies-products__info__icon
+                  c-companies-products__info__icon--eye
+                "
+              >
+                <use xlink:href="#icon-eye"></use>
+              </svg>
+              {{ item.views }} {{ 'main.popular.views' | translate }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <!-- More -->
+  <div class="c-companies-products__more" (click)="loadMore()">
+    <button class="button" type="button" [disabled]="loading">
+      <div class="button__loading rotating"></div>
+      <span>{{ 'main.popular.more' | translate}}</span>
+    </button>
+  </div>
+</div>

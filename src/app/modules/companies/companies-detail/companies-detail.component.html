@@ -1,0 +1,89 @@
+<div class="c-companies-detail">
+  <div class="c-companies-detail__wrapper">
+    <!-- Search -->
+    <div class="c-companies-detail__search">
+      <app-c-search></app-c-search>
+    </div>
+    <!-- Breadcrumbs -->
+    <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+    <!-- Content -->
+    <div class="c-companies-detail__info">
+      <!-- Top -->
+      <div class="c-companies-detail__top">
+        <div class="c-companies-detail__image-block">
+          <img
+            class="c-companies-detail__image"
+            [alt]="'Company ' + companyInfo.id + ' image'"
+            [src]="companyInfo.logoUrl || 'assets/images/company.jpg'"
+          />
+        </div>
+        <!-- Contnet -->
+        <div class="c-companies-detail__content">
+          <!-- Title -->
+          <h1 class="c-companies-detail__title">
+            {{ companyInfo.legalName + ' / ' + companyInfo.commercialName }}
+          </h1>
+          <!-- Description -->
+          <p class="c-companies-detail__description">
+            {{ companyInfo.description }}
+          </p>
+        </div>
+      </div>
+      <!-- Description small -->
+      <p class="c-companies-detail__description-small">
+        {{ companyInfo.description }}
+      </p>
+      <!-- Items -->
+      <ul class="c-companies-detail__items">
+        <!-- Phone -->
+        <li class="c-companies-detail__item" *ngIf="companyInfo.phone">
+          <div class="c-companies-detail__circle">
+            <svg class="icon c-companies-detail__svg">
+              <use xlink:href="#icon-smartphone"></use>
+            </svg>
+          </div>
+          <span>{{ companyInfo.phone }}</span>
+        </li>
+        <!-- Email -->
+        <li class="c-companies-detail__item" *ngIf="companyInfo.email">
+          <div class="c-companies-detail__circle">
+            <svg class="icon c-companies-detail__svg">
+              <use xlink:href="#icon-mail"></use>
+            </svg>
+          </div>
+          <span>{{ companyInfo.email }}</span>
+        </li>
+        <!-- Site -->
+        <li class="c-companies-detail__item" *ngIf="companyInfo.site">
+          <div class="c-companies-detail__circle">
+            <svg class="icon c-companies-detail__svg">
+              <use xlink:href="#icon-link"></use>
+            </svg>
+          </div>
+          <span>{{ companyInfo.site }}</span>
+        </li>
+        <!-- Address -->
+        <li class="c-companies-detail__item" *ngIf="companyInfo.address">
+          <div class="c-companies-detail__circle">
+            <svg class="icon c-companies-detail__svg">
+              <use xlink:href="#icon-maps"></use>
+            </svg>
+          </div>
+          <span>{{ companyInfo.address }}</span>
+        </li>
+        <!-- Schedule -->
+        <li class="c-companies-detail__item" *ngIf="companyInfo.schedule">
+          <div class="c-companies-detail__circle">
+            <svg class="icon c-companies-detail__svg">
+              <use xlink:href="#icon-calendar"></use>
+            </svg>
+          </div>
+          <span>{{ companyInfo.schedule }}</span>
+        </li>
+      </ul>
+
+      <!-- Products -->
+      <app-products></app-products>
+    </div>
+  </div>
+</div>

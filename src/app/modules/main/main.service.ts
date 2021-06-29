@@ -1,3 +1,4 @@
+import { ProductItem } from 'src/app/interfaces/products.types';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -5,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MainService {
-  popularList: Array<any> = [
+  popularList: Array<ProductItem> = [
     {
       id: 1,
       image: 'https://via.placeholder.com/250',
@@ -37,20 +38,12 @@ export class MainService {
       date: '01.02.20201',
       location: 'г. Минск, Беларусь',
       views: 880
-    },
-    {
-      id: 5,
-      image: 'https://via.placeholder.com/250',
-      title: 'Маникюр, педикюр, долговременное покрытие от 10 руб, комплексы — от 18 руб. в салоне красоты «Vivien»',
-      date: '01.02.20201',
-      location: 'г. Минск, Беларусь',
-      views: 880
     }
   ];
 
   constructor(private http: HttpClient) {}
 
-  getPopular(): Array<any> {
+  getPopular(): Array<ProductItem> {
     return this.popularList;
   } 
 }

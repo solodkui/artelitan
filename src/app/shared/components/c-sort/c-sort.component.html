@@ -1,0 +1,35 @@
+<div appClickOutside (clickOutside)="showList = false">
+  <div
+    class="c-sort__wrapper"
+    (click)="showList = !showList"
+    (clickOutside)="showList = false"
+  >
+    <b class="c-sort__text">
+      {{ 'companies.sort' | translate }}
+    </b>
+    <div class="c-sort__icon">
+      <svg class="c-sort__svg">
+        <use xlink:href="#icon-arrow"></use>
+      </svg>
+    </div>
+  </div>
+
+  <div class="c-sort__content" *ngIf="showList">
+    <ul class="c-sort__content__list">
+      <li
+        class="c-sort__content__item"
+        (click)="activeType = sortTypes.DATE"
+        [class.c-sort__content__item--active]="activeType === sortTypes.DATE"
+      >
+        {{ 'sort.list.date' | translate }}
+      </li>
+      <li
+        class="c-sort__content__item"
+        (click)="activeType = sortTypes.NAME"
+        [class.c-sort__content__item--active]="activeType === sortTypes.NAME"
+      >
+        {{ 'sort.list.name' | translate }}
+      </li>
+    </ul>
+  </div>
+</div>

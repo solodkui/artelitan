@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClickOutsideDirective } from './directives/outside.directive';
 import { SvgComponent } from './components/svg/svg.component';
 import { CBreadcrumbsComponent } from './components/c-breadcrumbs/c-breadcrumbs.component';
+import { CFilterComponent } from './components/c-filter/c-filter.component';
+import { CSortComponent } from './components/c-sort/c-sort.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(
@@ -33,7 +35,9 @@ export class MissingTranslationService implements MissingTranslationHandler {
     ECheckboxComponent,
     ClickOutsideDirective,
     SvgComponent,
-    CBreadcrumbsComponent
+    CBreadcrumbsComponent,
+    CFilterComponent,
+    CSortComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +60,9 @@ export class MissingTranslationService implements MissingTranslationHandler {
     ECheckboxComponent,
     ClickOutsideDirective,
     SvgComponent,
-    CBreadcrumbsComponent
+    CBreadcrumbsComponent,
+    CFilterComponent,
+    CSortComponent
   ],
 })
 

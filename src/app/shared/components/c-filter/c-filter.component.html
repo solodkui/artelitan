@@ -1,0 +1,36 @@
+<div appClickOutside (clickOutside)="showList = false">
+  <div class="c-filter__wrapper" (click)="showList = !showList">
+    <b class="c-filter__text">
+      {{ 'companies.filter' | translate }}
+    </b>
+    <div class="c-filter__icon">
+      <svg class="c-filter__svg">
+        <use xlink:href="#icon-config"></use>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="c-filter__content" *ngIf="showList">
+    <!-- Content title -->
+    <div class="c-filter__content__title">
+      <b>
+        {{ 'filter.title' | translate }}
+      </b>
+    </div>
+
+    <!-- Content list -->
+    <ul class="c-filter__list">
+      <li
+        class="c-filter__list__item"
+        *ngFor="let categoryItem of categoryList; let i = index"
+      >
+        <app-e-checkbox
+          [formMode]="false"
+          [title]="categoryItem.name"
+          [controlName]="categoryItem.active"
+        ></app-e-checkbox>
+      </li>
+    </ul>
+  </div>
+</div>

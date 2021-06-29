@@ -34,6 +34,7 @@ export class CompaniesComponent {
     private cdk: ChangeDetectorRef
   ) {
     this.companiesList = this.route.snapshot.data.companies;
+    console.log(this.companiesList);
   }
 
   loadMore(): void {

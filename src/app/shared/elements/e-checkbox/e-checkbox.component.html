@@ -1,10 +1,19 @@
 <label class="e-checkbox__wrapper">
   <div class="e-checkbox__block">
-    <input
-      type="checkbox"
-      class="e-checkbox__input"
-      [formControlName]="controlName"
-    />
+    <ng-container *ngIf="formMode; else withoutFormMode">
+      <input
+        type="checkbox"
+        class="e-checkbox__input"
+        [formControlName]="controlName"
+      />
+    </ng-container>
+    <ng-template #withoutFormMode>
+      <input
+        type="checkbox"
+        class="e-checkbox__input"
+        [checked]="controlName"
+      />
+    </ng-template>
     <svg class="icon e-checkbox__icon">
       <use xlink:href="#icon-check"></use>
     </svg>

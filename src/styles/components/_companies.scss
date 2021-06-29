@@ -3,6 +3,10 @@
 .c-companies {
   &__title {
     margin-bottom: 60px;
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      text-align: center;
+    }
   }
 
   &__search {
@@ -28,67 +32,11 @@
     }
   }
 
-  &__filter {
-    transition: $t-normal;
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    fill: $c-blue;
-
-    &:hover {
-      fill: $c-white;
-      color: $c-blue;
-
-      & > .c-companies__filter__icon {
-        background-color: $c-blue;
-      }
-    }
-
-    &__text {
-      margin-right: 10px;
-    }
-
-    &__icon {
-      border: 1px solid $c-blue;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      display: flex;
-      height: 40px;
-      width: 40px;
-    }
-
-    &__svg {
-      height: 14px;
-      width: 14px;
-    }
-  }
-
   &__sort {
-    transition: $t-normal;
-    align-items: center;
     margin-right: 30px;
-    cursor: pointer;
-    display: flex;
-    fill: $c-black;
 
-    &:hover {
-      color: $c-blue;
-      fill: $c-blue;
-    }
-
-    &__text {
-      margin-right: 5px;
-    }
-
-    &__icon {
-      align-items: center;
-      display: flex;
-    }
-
-    &__svg {
-      height: 10px;
-      width: 10px;
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: none;
     }
   }
 

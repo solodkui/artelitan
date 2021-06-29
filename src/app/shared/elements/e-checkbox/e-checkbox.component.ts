@@ -15,4 +15,5 @@ import { ControlContainer, FormGroupDirective } from '@angular/forms';
 export class ECheckboxComponent {
   @Input() controlName: string;
   @Input() title: string;
+  @Input() formMode: boolean = true;
 }

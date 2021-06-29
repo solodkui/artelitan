@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .c-companies-list {
   &__wrapper {
     display: grid;
@@ -6,6 +8,10 @@
 
     &--block {
       grid-template-columns: repeat(2, 1fr);
+
+      @media (max-width: map.get($container-max-widths, "md")) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 
@@ -14,11 +20,32 @@
     border-radius: 30px;
     overflow: hidden;
     display: flex;
+
+    &--block {
+      flex-direction: column;
+    }
   }
 
   &__image-block {
-    width: 100%;
+    background-color: $c-white;
+    align-items: center;
     max-width: 175px;
+    display: flex;
+    width: 100%;
+
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: none;
+    }
+
+    &--block {
+      max-height: 140px;
+      overflow: hidden;
+      max-width: 100%;
+
+      @media (max-width: map.get($container-max-widths, "md")) {
+        display: flex;
+      }
+    }
   }
 
   &__image {
@@ -43,8 +70,19 @@
     line-height: 19px;
     font-weight: 600;
     font-size: 14px;
+    cursor: pointer;
     color: $c-blue;
-    cursor: default;
+    display: block;
+
+    &:hover {
+      color: $c-blue;
+    }
+  }
+
+  &__arrow {
+    @media (max-width: map.get($container-max-widths, "md")) {
+      display: none;
+    }
   }
 
   &__description {

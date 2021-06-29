@@ -1,0 +1,105 @@
+@use "sass:map";
+
+.c-companies-detail {
+  &__search {
+    margin-bottom: 60px;
+
+    @media (max-width: map.get($container-max-widths, 'md')) {
+      display: none;
+    }
+  }
+
+  &__top {
+    display: flex;
+    margin-bottom: 60px;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      flex-direction: column-reverse;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image-block {
+    border-radius: 30px;
+    align-items: center;
+    overflow: hidden;
+    min-width: 205px;
+    height: 205px;
+    display: flex;
+    width: 205px;
+    margin-right: 100px;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    line-height: 34px;
+    font-size: 25px;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 19px;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      display: none;
+    }
+  }
+
+  &__description-small {
+    margin-bottom: 60px;
+    line-height: 19px;
+    font-size: 14px;
+    display: none;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      display: block;
+    }
+  }
+
+  &__items {
+    border-bottom: 1px solid $c-blue-light;
+    grid-template-columns: repeat(3, 1fr);
+    list-style-type: none;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    padding-left: 0;
+    grid-gap: 30px;
+    display: grid;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+  }
+
+  &__circle {
+    background-color: $c-blue;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 22px;
+    min-width: 40px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__svg {
+    fill: $c-white;
+    height: 14px;
+    width: 14px;
+  }
+}

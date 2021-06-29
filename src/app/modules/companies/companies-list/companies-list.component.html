@@ -4,13 +4,22 @@
     type === companiesContentTypes.BLOCK
   "
 >
-  <div class="c-companies-list__item" *ngFor="let item of list; let i = index">
+  <div
+    class="c-companies-list__item"
+    *ngFor="let item of list; let i = index"
+    [class.c-companies-list__item--block]="type === companiesContentTypes.BLOCK"
+  >
     <!-- Image -->
-    <div class="c-companies-list__image-block">
+    <div
+      class="c-companies-list__image-block"
+      [class.c-companies-list__image-block--block]="
+        type === companiesContentTypes.BLOCK
+      "
+    >
       <img
         [alt]="'Company image ' + i"
         class="c-companies-list__image"
-        [src]="item.logoUrl || 'https://via.placeholder.com/250'"
+        [src]="item.logoUrl || 'assets/images/company.jpg'"
       />
     </div>
     <!-- Content -->
@@ -18,9 +27,9 @@
       <!-- Info -->
       <div class="c-companies-list__info">
         <!-- Title -->
-        <h6 class="c-companies-list__title" [title]="item.legalName">
+        <a [routerLink]="'/companies/' + item.id" class="c-companies-list__title" [title]="item.legalName">
           {{ item.legalName }}
-        </h6>
+        </a>
         <!-- Description -->
         <div class="c-companies-list__description" *ngIf="item.description">
           <div
@@ -32,7 +41,11 @@
         </div>
       </div>
       <!-- Arrow -->
-      <app-e-circle></app-e-circle>
+      <div class="c-companies-list__arrow">
+        <ng-container *ngIf="type === companiesContentTypes.LIST">
+          <app-e-circle></app-e-circle>
+        </ng-container>
+      </div>
     </div>
   </div>
 </div>

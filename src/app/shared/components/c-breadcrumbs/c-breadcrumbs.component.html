@@ -1,7 +1,12 @@
 <div class="c-breadcrumbs__wrapper">
   <div class="c-breadcrumbs__item" *ngFor="let item of list">
     <a (click)="redirect(item.link)">
-      {{ item.title | translate }}
+      <ng-container *ngIf="item.customTextMode; else staticMode">
+        {{ item.title }}
+      </ng-container>
+      <ng-template #staticMode>
+        {{ item.title | translate }}
+      </ng-template>
     </a>
   </div>
 </div>

@@ -15,27 +15,11 @@
   <!-- Header -->
   <div class="c-companies__header">
     <!-- Filter -->
-    <div class="c-companies__filter">
-      <div class="c-companies__filter__text">
-        {{ 'companies.filter' | translate }}
-      </div>
-      <div class="c-companies__filter__icon">
-        <svg class="c-companies__filter__svg">
-          <use xlink:href="#icon-config"></use>
-        </svg>
-      </div>
-    </div>
+    <app-c-filter></app-c-filter>
     <div class="c-companies__header__block">
       <!-- Sort -->
       <div class="c-companies__sort">
-        <div class="c-companies__sort__text">
-          {{ 'companies.sort' | translate }}
-        </div>
-        <div class="c-companies__sort__icon">
-          <svg class="c-companies__sort__svg">
-            <use xlink:href="#icon-arrow"></use>
-          </svg>
-        </div>
+        <app-c-sort></app-c-sort>
       </div>
       <!-- Schedule -->
       <div class="c-companies__schedule">

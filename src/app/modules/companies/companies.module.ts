@@ -5,16 +5,20 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CompaniesListComponent } from './companies-list/companies-list.component';
 import { CompaniesResolver } from './companies.resolver';
+import { CompaniesDetailComponent } from './companies-detail/companies-detail.component';
+import { CompaniesDetailResolver } from './companies-detail/companies-detail.resolver';
+import { ProductsComponent } from './companies-detail/products/products.component';
 
 @NgModule({
-  declarations: [CompaniesComponent, CompaniesListComponent],
+  declarations: [CompaniesComponent, CompaniesListComponent, CompaniesDetailComponent, ProductsComponent],
   imports: [
     CommonModule,
     CompaniesRoutingModule,
     SharedModule
   ],
   providers: [
-    CompaniesResolver
+    CompaniesResolver,
+    CompaniesDetailResolver
   ]
 })
 export class CompaniesModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductItem } from 'src/app/interfaces/products.types';
 import { MainService } from '../main.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { MainService } from '../main.service';
   templateUrl: './main-popular.component.html',
 })
 export class MainPopularComponent implements OnInit {
-  contentList: Array<any> = [];
+  contentList: Array<ProductItem> = [];
   loading: boolean = false;
 
   constructor(private mainService: MainService) { }
