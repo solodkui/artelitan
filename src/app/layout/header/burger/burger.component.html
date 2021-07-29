@@ -1,5 +1,9 @@
-<div class="e-burger__wrapper">
-  <span class="e-burger__item"></span>
-  <span class="e-burger__item"></span>
-  <span class="e-burger__item"></span>
+<div
+  (click)="changeBurger.emit()"
+  class="e-burger__wrapper"
+  [class.e-burger__wrapper--active]="open"
+>
+  <span></span>
+  <span></span>
+  <span></span>
 </div>

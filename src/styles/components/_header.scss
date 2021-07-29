@@ -24,24 +24,15 @@
     display: flex;
     align-items: center;
     z-index: 10;
+
+    @media (max-width: map.get($container-max-widths, 'lg')) {
+      margin-left: 50px;
+    }
   }
 
   &__right {
     display: flex;
     align-items: center;
-  }
-  
-  &__burger {
-    display: none;
-    margin-right: 35px;
-
-    @media (max-width: map.get($container-max-widths, "lg")) {
-      display: block;
-    }
-
-    @media (max-width: map.get($container-max-widths, "sm")) {
-      margin-right: 30px;
-    }
   }
   
   &__logo {

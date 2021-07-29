@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-burger',
   templateUrl: './burger.component.html',
-  styleUrls: ['./burger.component.scss'],
   host: { class: 'e-burger' },
 })
-export class BurgerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class BurgerComponent {
+  @Output() changeBurger = new EventEmitter<void>();
+  @Input() open: boolean;
 }

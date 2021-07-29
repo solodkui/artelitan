@@ -6,7 +6,6 @@ import { CompanyTypes } from 'src/app/interfaces/companies.types';
 
 @Injectable()
 export class CompaniesDetailResolver implements Resolve<CompanyTypes> {
-
   constructor(private companiesService: CompaniesService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<CompanyTypes> {

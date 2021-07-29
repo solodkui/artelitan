@@ -1,9 +1,10 @@
 <header class="c-header__wrapper container-fluid">
+  <!-- Burger -->
+  <app-burger
+    [open]="openMenu"
+    (changeBurger)="openMenu = !openMenu"
+  ></app-burger>
   <a class="c-header__left" routerLink="/">
-    <!-- Burger -->
-    <div class="c-header__burger">
-      <app-burger></app-burger>
-    </div>
     <!-- Logo -->
     <img
       class="c-header__logo"
@@ -12,7 +13,9 @@
     />
   </a>
   <!-- Navigations -->
-  <app-navigation></app-navigation>
+  <div class="c-header__navigation" *ngIf="openMenu">
+    <app-navigation (close)="openMenu = false"></app-navigation>
+  </div>
   <!-- Locations -->
   <div class="c-header__right">
     <div class="c-header__search">
