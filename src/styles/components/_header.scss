@@ -72,4 +72,12 @@
       fill: $c-blue;
     }
   }
+
+  &__navigation {
+    &--hide {
+      @media (max-width: map.get($container-max-widths, "lg")) {
+        display: none;
+      }
+    }
+  }
 }

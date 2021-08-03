@@ -17,8 +17,10 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeedbackComponent {
-  feedbackForm: FormGroup;
+  submited: boolean = false;
   loading: boolean = false;
+  feedbackForm: FormGroup;
+  fileName: string;
   // Country
   preferredCountries: CountryISO[] = [CountryISO.Russia, CountryISO.Ukraine];
   SearchCountryField = SearchCountryField;
@@ -34,12 +36,19 @@ export class FeedbackComponent {
     this.feedbackForm.markAllAsTouched();
     if (this.feedbackForm.valid) {
       this.loading = true;
+      // TODO --- Imitation (Remove in future)
+      setTimeout(() => {
+        this.loading = false;
+        this.submited = true;
+        this.cdr.detectChanges();
+      }, 2000);
     }
   }
 
   upload(event: any): void {
     const fileTmp = event.target.files[0];
     const formData = new FormData();
+    this.fileName = fileTmp.name;
     formData.append('file', fileTmp);
   }
 

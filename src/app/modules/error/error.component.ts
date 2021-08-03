@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  host: { class: 'l-main' },
+  selector: 'app-error',
+  templateUrl: './error.component.html',
+  host: { class: 'l-error-page' },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent {}
+export class ErrorComponent {}

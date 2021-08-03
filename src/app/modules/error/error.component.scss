@@ -1,0 +1,32 @@
+@import '../../../styles/variables';
+
+.l-error-page {
+  &__header {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    display: flex;
+  }
+
+  &__title {
+    margin-right: 70px;
+    min-width: 287px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__link {
+    color: $c-blue-light;
+  }
+
+  &__search {
+    margin-bottom: 60px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

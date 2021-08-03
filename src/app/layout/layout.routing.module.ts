@@ -56,9 +56,14 @@ const routes: Routes = [
             (m) => m.CompaniesModule
           ),
       },
+      {
+        path: '404',
+        loadChildren: () =>
+          import('../modules/error/error.module').then((m) => m.ErrorModule),
+      },
     ],
   },
-  { path: '**', redirectTo: 'main', pathMatch: 'full' },
+  { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
 @NgModule({

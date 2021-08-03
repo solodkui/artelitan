@@ -3,9 +3,10 @@
 .e-navigation {
   justify-content: center;
   position: absolute;
-  display: block;
   display: flex;
   width: 100%;
+  right: 0;
+  left: 0;
 
   @media (max-width: map.get($container-max-widths, 'lg')) {
     background-color: $c-white;
@@ -14,8 +15,6 @@
     z-index: 201;
     height: 100%;
     bottom: 0;
-    right: 0;
-    left: 0;
     top: 0;
   }
 

@@ -1,0 +1,29 @@
+<section class="l-error-page__wrapper container">
+  <!-- Header -->
+  <div class="l-error-page__header">
+    <h1 class="l-error-page__title">
+      {{ 'errorPage.title' | translate }}
+    </h1>
+    <p class="l-error-page__subtitle">
+      <span>
+        {{ 'errorPage.subtitle.1' | translate }}
+      </span>
+      <a routerLink="/home" class="l-error-page__link">
+        {{ 'errorPage.subtitle.2' | translate }}
+      </a>
+      <span>
+        {{ 'errorPage.subtitle.3' | translate }}
+      </span>
+    </p>
+  </div>
+  <!-- Search -->
+  <div class="l-error-page__search">
+    <app-c-search></app-c-search>
+  </div>
+  <!-- Image -->
+  <img
+    alt="404-image"
+    src="assets/images/404.png"
+    class="l-error-page__image"
+  />
+</section>
