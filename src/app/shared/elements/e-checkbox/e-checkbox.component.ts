@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
 import { ControlContainer, FormGroupDirective } from '@angular/forms';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-e-checkbox',
@@ -8,12 +8,11 @@ import { ControlContainer, FormGroupDirective } from '@angular/forms';
   viewProviders: [
     {
       provide: ControlContainer,
-      useExisting: FormGroupDirective
-    }
-  ]
+      useExisting: FormGroupDirective,
+    },
+  ],
 })
 export class ECheckboxComponent {
   @Input() controlName: string;
   @Input() title: string;
-  @Input() formMode: boolean = true;
 }

@@ -15,7 +15,7 @@
   <!-- Header -->
   <div class="c-companies__header">
     <!-- Filter -->
-    <app-c-filter></app-c-filter>
+    <app-c-filter (changeFilters)="setFilters($event)"></app-c-filter>
     <div class="c-companies__header__block">
       <!-- Sort -->
       <div class="c-companies__sort">

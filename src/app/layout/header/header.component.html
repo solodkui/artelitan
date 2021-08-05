@@ -13,7 +13,10 @@
     />
   </a>
   <!-- Navigations -->
-  <div class="c-header__navigation" [class.c-header__navigation--hide]="!openMenu">
+  <div
+    class="c-header__navigation"
+    [class.c-header__navigation--hide]="!openMenu"
+  >
     <app-navigation (close)="openMenu = false"></app-navigation>
   </div>
   <!-- Locations -->

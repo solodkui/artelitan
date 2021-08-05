@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 export class CompaniesService {
   constructor(private http: HttpClient) {}
 
-  getCompanies(size: number = 2, offset: number = 0): Observable<Array<CompaniesItem>> {
+  getCompanies(size: number = 2, offset: number = 0, filters: Array<number> = []): Observable<Array<CompaniesItem>> {
+    // TODO --- filters - Edit in future
     return this.http.get<Array<CompaniesItem>>(
       `${environment.api}/Company/GetAllCompanies?size=${size}&offset=${offset}`,
       {

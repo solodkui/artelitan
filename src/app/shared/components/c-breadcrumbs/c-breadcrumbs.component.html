@@ -1,6 +1,6 @@
 <div class="c-breadcrumbs__wrapper">
   <div class="c-breadcrumbs__item" *ngFor="let item of list">
-    <a (click)="redirect(item.link)">
+    <a (click)="redirect(item.link)" *ngIf="item">
       <ng-container *ngIf="item.customTextMode; else staticMode">
         {{ item.title }}
       </ng-container>

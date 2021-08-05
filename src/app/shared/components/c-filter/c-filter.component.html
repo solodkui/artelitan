@@ -11,7 +11,7 @@
   </div>
 
   <!-- Content -->
-  <div class="c-filter__content" *ngIf="showList">
+  <form class="c-filter__content" *ngIf="showList" [formGroup]="filterForm">
     <!-- Content title -->
     <div class="c-filter__content__title">
       <b>
@@ -26,11 +26,11 @@
         *ngFor="let categoryItem of categoryList; let i = index"
       >
         <app-e-checkbox
-          [formMode]="false"
+          (change)="editFilterIds()"
           [title]="categoryItem.name"
-          [controlName]="categoryItem.active"
+          [controlName]="categoryItem.id"
         ></app-e-checkbox>
       </li>
     </ul>
-  </div>
+  </form>
 </div>

@@ -16,6 +16,10 @@
     margin: 0 0 45px 0;
     color: $c-blue;
     cursor: default;
+
+    @media (max-width: map.get($container-max-widths, "lg")) {
+      margin-bottom: 30px;
+    }
   }
 
   &__news {

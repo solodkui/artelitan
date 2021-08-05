@@ -1,6 +1,6 @@
 export interface CategoryItem {
-  id: number;
-  name: string;
   rootCategoryId: number;
-  active?: boolean;
+  image?: string;
+  name: string;
+  id: number;
 }

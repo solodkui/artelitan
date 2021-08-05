@@ -1,5 +1,6 @@
-import { AfterContentInit, Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CategoryItem } from 'src/app/interfaces/category-item';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { CFilterService } from './c-filter.service';
 
 @Component({
@@ -7,16 +8,39 @@ import { CFilterService } from './c-filter.service';
   templateUrl: './c-filter.component.html',
   host: { class: 'c-filter' },
 })
-export class CFilterComponent implements AfterContentInit {
+export class CFilterComponent {
+  @Output() changeFilters = new EventEmitter<Array<number>>();
   categoryList: Array<CategoryItem> = [];
+  activeFilterList: Array<number> = [];
+  filterForm: FormGroup;
   showList: boolean = false;
 
-  constructor(private cFilterService: CFilterService) {}
+  constructor(private cFilterService: CFilterService, private fb: FormBuilder) {
+    this.getCategories();
+  }
 
-  ngAfterContentInit(): void {
-    this.cFilterService.getCategories().subscribe(response => {
-      console.log('CATEGORIES: ', response);
-      this.categoryList = response;
+  editFilterIds(): void {
+    const filterItems: Array<number> = [];
+    Object.keys(this.filterForm.value).forEach((key) => {
+      if (this.filterForm.value[key]) {
+        filterItems.push(+key);
+      }
     });
+    this.changeFilters.emit(filterItems);
+  }
+
+  private getCategories(): void {
+    this.cFilterService.getCategories().subscribe((categoryList) => {
+      this.categoryList = categoryList.filter((item) => item.rootCategoryId);
+      this.initForm();
+    });
+  }
+
+  private initForm(): void {
+    let newFormObject = {};
+    this.categoryList.forEach((categoryItem) => {
+      newFormObject[categoryItem.id] = [false];
+    });
+    this.filterForm = this.fb.group(newFormObject);
   }
 }

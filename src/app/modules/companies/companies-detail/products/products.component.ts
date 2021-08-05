@@ -9,7 +9,10 @@ import { Component } from '@angular/core';
 })
 export class ProductsComponent {
   productList: Array<ProductItem> = [];
+  filters: Array<number> = [];
   loading: boolean = false;
+  offset: number = 2;
+  size: number = 2;
 
   constructor(private mainService: MainService) {
     this.getProducts();
@@ -19,11 +22,18 @@ export class ProductsComponent {
     this.productList = this.mainService.getPopular();
   }
 
-  loadMore(): void {
+  loadMore(offset: number = null): void {
+    this.offset = offset || (this.offset += 2);
     this.loading = true;
+    // TODO --- Custom (need to re-edit in future)
     setTimeout(() => {
-      this.productList = this.productList.concat(this.mainService.getPopular());
+      this.productList = this.productList.concat(this.mainService.getPopular(this.size, this.offset, this.filters));
       this.loading = false;
-    }, 2000);
+    }, 1500);
+  }
+
+  setFilters(filterItems: Array<number>): void {
+    this.filters = filterItems;
+    this.loadMore(2);
   }
 }

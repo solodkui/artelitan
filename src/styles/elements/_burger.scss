@@ -5,9 +5,14 @@
   cursor: pointer;
   display: none;
   z-index: 902;
+  left: 20px;
 
   @media (max-width: map.get($container-max-widths, 'lg')) {
     display: block;
+  }
+
+  @media (max-width: map.get($container-max-widths, 'sm')) {
+    left: 15px;
   }
 
   &__wrapper {
@@ -15,7 +20,7 @@
     align-items: center;
     display: flex;
     z-index: 202;
-    height: 18px;
+    height: 12px;
     width: 18px;
 
     &--active {
@@ -24,7 +29,7 @@
 
         &:first-child {
           transform: rotate(-45deg);
-          top: 8px !important;
+          top: 5px !important;
         }
 
         &:last-child {
@@ -42,7 +47,7 @@
     border-radius: 2px;
     width: 18px;
     height: 2px;
-    top: 8px;
+    top: 5px;
 
     &:first-child {
       top: 0;

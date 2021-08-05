@@ -46,6 +46,13 @@ body {
 
     @media (max-width: map.get($container-max-widths, "xl")) {
       flex-direction: column;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      padding-right: 15px;
+      padding-left: 15px;
     }
   }
 

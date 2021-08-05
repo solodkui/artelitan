@@ -1,0 +1,24 @@
+<section class="c-services-products-page__wrapper">
+  <!-- Breadcrumbs -->
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <!-- Title -->
+  <h1 class="c-services-products-page__title">
+    {{ title }}
+  </h1>
+
+  <!-- Search -->
+  <div class="c-services-products-page__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <!-- Config -->
+  <div class="c-services-products-page__config">
+    <app-c-sort (changeSort)="sortType = $event"></app-c-sort>
+  </div>
+
+  <!-- Products -->
+  <div class="c-services-products-page__products">
+    <app-services-products></app-services-products>
+  </div>
+</section>

@@ -1,4 +1,4 @@
-<div class="c-services-main__wrapper">
+<section class="c-services-main__wrapper">
   <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
 
   <h1 class="c-services-main__title">
@@ -9,20 +9,22 @@
     <app-c-search></app-c-search>
   </div>
 
-  <div class="c-services-main__list">
-    <div
+  <ul class="c-services-main__list">
+    <li
       class="c-services-main__item"
       [title]="serviceMainItem.title | translate"
       *ngFor="let serviceMainItem of serviceMainList; let i = index"
     >
-      <img
-        [src]="serviceMainItem.image"
-        class="c-services-main__item__image"
-        [alt]="'Service main image ' + i"
-      />
-      <b class="c-services-main__item__title">
-        {{ serviceMainItem.title | translate }}
-      </b>
-    </div>
-  </div>
-</div>
+      <a [routerLink]="'/services/content/' + serviceMainItem.id" class="c-services-main__link">
+        <img
+          [src]="'assets/images/services/main/' + serviceMainItem.id + '.png'"
+          class="c-services-main__item__image"
+          [alt]="'Service main image ' + i"
+        />
+        <b class="c-services-main__item__title">
+          {{ serviceMainItem.name }}
+        </b>
+      </a>
+    </li>
+  </ul>
+</section>

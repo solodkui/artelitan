@@ -18,14 +18,14 @@
     <ul class="c-sort__content__list">
       <li
         class="c-sort__content__item"
-        (click)="activeType = sortTypes.DATE"
+        (click)="changeSortType(sortTypes.DATE)"
         [class.c-sort__content__item--active]="activeType === sortTypes.DATE"
       >
         {{ 'sort.list.date' | translate }}
       </li>
       <li
         class="c-sort__content__item"
-        (click)="activeType = sortTypes.NAME"
+        (click)="changeSortType(sortTypes.NAME)"
         [class.c-sort__content__item--active]="activeType === sortTypes.NAME"
       >
         {{ 'sort.list.name' | translate }}

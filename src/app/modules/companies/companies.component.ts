@@ -1,8 +1,15 @@
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
+import {
+  CompaniesContentTypes,
+  CompaniesItem,
+} from 'src/app/interfaces/companies.types';
 import { BreadcrumbsItem } from 'src/app/interfaces/breadcrumbs.types';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { CompaniesContentTypes, CompaniesItem } from 'src/app/interfaces/companies.types';
-import { ActivatedRoute } from '@angular/router';
 import { CompaniesService } from './companies.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-companies',
@@ -14,16 +21,17 @@ export class CompaniesComponent {
   breadcrumbs: Array<BreadcrumbsItem> = [
     {
       link: '/',
-      title: 'companies.breadcrumbs.main'
+      title: 'companies.breadcrumbs.main',
     },
     {
       link: '/companies',
-      title: 'companies.breadcrumbs.companies'
-    }
+      title: 'companies.breadcrumbs.companies',
+    },
   ];
   activeCompaniesContentTypes = CompaniesContentTypes.BLOCK;
   companiesContentTypes = CompaniesContentTypes;
   companiesList: Array<CompaniesItem> = [];
+  filters: Array<number> = [];
   full: boolean = false;
   offset: number = 2;
   size: number = 2;
@@ -34,14 +42,26 @@ export class CompaniesComponent {
     private cdk: ChangeDetectorRef
   ) {
     this.companiesList = this.route.snapshot.data.companies;
-    console.log(this.companiesList);
   }
 
-  loadMore(): void {
-    this.offset += 2;
-    this.companiesService.getCompanies(this.size, this.offset).subscribe(response => {
-      response.length ? this.companiesList = this.companiesList.concat(response) : this.full = true;
-      this.cdk.detectChanges();
-    });
+  setFilters(filterItems: Array<number>): void {
+    this.filters = filterItems;
+    this.loadMore(2);
+  }
+
+  loadMore(offset: number = null): void {
+    this.offset = offset || (this.offset += 2);
+    this.companiesService
+      .getCompanies(this.size, this.offset, this.filters)
+      .subscribe((response) => {
+        if (response.length) {
+          this.companiesList = offset
+            ? (this.companiesList = response)
+            : this.companiesList.concat(response);
+        } else {
+          this.full = true;
+        }
+        this.cdk.detectChanges();
+      });
   }
 }

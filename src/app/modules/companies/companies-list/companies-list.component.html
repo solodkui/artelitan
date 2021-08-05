@@ -41,11 +41,11 @@
         </div>
       </div>
       <!-- Arrow -->
-      <div class="c-companies-list__arrow">
+      <a class="c-companies-list__arrow" [routerLink]="'/companies/' + item.id">
         <ng-container *ngIf="type === companiesContentTypes.LIST">
           <app-e-circle></app-e-circle>
         </ng-container>
-      </div>
+      </a>
     </div>
   </div>
 </div>

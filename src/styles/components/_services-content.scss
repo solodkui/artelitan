@@ -1,16 +1,12 @@
 @use "sass:map";
 
-.c-services-main {
+.c-services-content {
   &__title {
     margin-bottom: 60px;
   }
 
   &__search {
     margin-bottom: 60px;
-  
-    @media (max-width: map.get($container-max-widths, "md")) {
-      display: none;
-    }
   }
 
   &__list {
@@ -28,7 +24,9 @@
 
   &__item {
     transition: $t-normal;
+    border-radius: 30px;
     position: relative;
+    overflow: hidden;
     cursor: pointer;
 
     &:hover {
@@ -53,9 +51,5 @@
     &__image {
       width: 100%;
     }
-  }
-
-  &__link {
-    display: block;
   }
 }

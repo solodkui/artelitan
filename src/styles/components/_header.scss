@@ -11,28 +11,40 @@
   top: 0;
 
   &__wrapper {
-    position: relative;
+    max-width: map.get($container-max-widths, "xl");
+    justify-content: space-between;
     padding-bottom: 45px;
+    align-items: center;
+    position: relative;
     padding-top: 45px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: map.get($container-max-widths, "xl");
   }
 
   &__left {
-    display: flex;
     align-items: center;
+    display: flex;
     z-index: 10;
 
     @media (max-width: map.get($container-max-widths, 'lg')) {
+      margin-left: 60px;
+    }
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
       margin-left: 50px;
     }
   }
 
   &__right {
-    display: flex;
     align-items: center;
+    display: flex;
+
+    @media (max-width: map.get($container-max-widths, 'lg')) {
+      margin-right: 4px;
+    }
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      margin-right: 0;
+    }
   }
   
   &__logo {
@@ -51,29 +63,31 @@
   }
 
   &__search {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
     border: 1px solid $c-blue;
-    border-radius: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
+    border-radius: 50%;
     cursor: pointer;
     display: none;
+    height: 30px;
+    width: 30px;
 
     @media (max-width: map.get($container-max-widths, "sm")) {
       display: flex;
     }
 
     &__icon {
-      width: 14px;
-      height: 14px;
       fill: $c-blue;
+      height: 14px;
+      width: 14px;
     }
   }
 
   &__navigation {
+    align-items: center;
+    display: flex;
+
     &--hide {
       @media (max-width: map.get($container-max-widths, "lg")) {
         display: none;

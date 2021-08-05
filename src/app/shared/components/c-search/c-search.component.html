@@ -8,6 +8,7 @@
     <input
       type="text"
       class="c-search__input"
+      [(ngModel)]="searchValue"
       [placeholder]="'search.placeholder' | translate"
     />
     <!-- Config button -->
@@ -50,20 +51,22 @@
             <div class="c-search__filters__title">
               {{ 'search.titles.selectSiteServices' | translate }}
             </div>
-            <div
-              class="c-search__filters__item"
-              *ngFor="let categoryItem of categoryList"
-            >
-              <app-e-checkbox
-                [title]="categoryItem.name"
-                [controlName]="categoryItem.rootCategoryId"
-              ></app-e-checkbox>
-            </div>
+            <ng-container *ngFor="let categoryItem of categoryList">
+              <div
+                class="c-search__filters__item"
+                *ngIf="categoryItem.rootCategoryId"
+              >
+                <app-e-checkbox
+                  [title]="categoryItem.name"
+                  [controlName]="categoryItem.id"
+                ></app-e-checkbox>
+              </div>
+            </ng-container>
           </div>
         </div>
       </div>
     </form>
   </div>
   <!-- Search button -->
-  <app-e-circle type="search" [blue]="true"></app-e-circle>
+  <app-e-circle (click)="search()" type="search" [blue]="true"></app-e-circle>
 </div>

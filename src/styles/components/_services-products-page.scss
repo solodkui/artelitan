@@ -1,0 +1,20 @@
+@use "sass:map";
+
+.c-services-products-page {
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__search {
+    margin-bottom: 60px;
+  }
+
+  &__config {
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  &__products {
+    margin-top: 40px;
+  }
+}

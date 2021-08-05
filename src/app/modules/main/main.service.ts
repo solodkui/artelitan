@@ -43,7 +43,8 @@ export class MainService {
 
   constructor(private http: HttpClient) {}
 
-  getPopular(): Array<ProductItem> {
+  getPopular(size: number = 2, offset: number = 0, filters: Array<number> = []): Array<ProductItem> {
+      // TODO --- filters - Edit in future
     return this.popularList;
   } 
 }

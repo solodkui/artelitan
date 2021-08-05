@@ -1,0 +1,33 @@
+<section class="c-services-content__wrapper">
+  <!-- Breadcrumbs -->
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <!-- Title -->
+  <h1 class="c-services-content__title">
+    {{ title }}
+  </h1>
+
+  <!-- Search -->
+  <div class="c-services-content__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <!-- Content -->
+  <ul class="c-services-content__list">
+    <li class="c-services-content__item" *ngFor="let item of contentList">
+      <a
+        [routerLink]="'/services/products/' + item.id"
+        class="c-services-content__link"
+      >
+        <img
+          [src]="item.image || 'https://via.placeholder.com/250'"
+          class="c-services-content__item__image"
+          [alt]="'Service content image ' + i"
+        />
+        <b class="c-services-content__item__title">
+          {{ item.name }}
+        </b>
+      </a>
+    </li>
+  </ul>
+</section>
