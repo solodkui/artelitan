@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     component: MainComponent
   },
-  { path: '**', redirectTo: 'main', pathMatch: 'full' },
+  // { path: '**', redirectTo: 'main', pathMatch: 'full' },
 ];
 
 @NgModule({

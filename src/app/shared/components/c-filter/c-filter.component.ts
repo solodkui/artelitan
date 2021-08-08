@@ -30,10 +30,12 @@ export class CFilterComponent {
   }
 
   private getCategories(): void {
-    this.cFilterService.getCategories().subscribe((categoryList) => {
-      this.categoryList = categoryList.filter((item) => item.rootCategoryId);
-      this.initForm();
-    });
+    if (typeof window !== 'undefined') {
+      this.cFilterService.getCategories().subscribe((categoryList) => {
+        this.categoryList = categoryList.filter((item) => item.rootCategoryId);
+        this.initForm();
+      });
+    }
   }
 
   private initForm(): void {

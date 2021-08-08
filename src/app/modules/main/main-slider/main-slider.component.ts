@@ -28,9 +28,7 @@ export class MainSliderComponent {
   };
 
   onSwiper(swiper: any): void {
-    console.log(swiper);
     this.swiper = swiper;
-    swiper.slideNext();
   }
 
   onSlideChange(): void {}

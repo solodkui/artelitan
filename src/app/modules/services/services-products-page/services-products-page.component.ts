@@ -29,7 +29,7 @@ export class ServicesProductsPageComponent implements OnDestroy {
 
   constructor(private route: ActivatedRoute) {
     this.routeParamsSubscription();
-    this.editContent();
+    this.editBreadcrumbs();
   }
 
   ngOnDestroy(): void {
@@ -38,30 +38,35 @@ export class ServicesProductsPageComponent implements OnDestroy {
     }
   }
 
-  editContent(): void {
-    this.route.snapshot.data.services.forEach((item) => {
-      if (item.id === this.activeProductId) {
-        // Add breadcrumb
-        this.breadcrumbs[3] = {
-          link: '/services/content/' + item.id,
-          title: item.name,
-          customTextMode: true,
+  editBreadcrumbs(): void {
+    if (
+      this.route.snapshot.data.services &&
+      this.route.snapshot.data.services.length
+    ) {
+      this.route.snapshot.data.services.forEach((item) => {
+        if (item.id === this.activeProductId) {
+          // Add breadcrumb
+          this.breadcrumbs[3] = {
+            link: '/services/content/' + item.id,
+            title: item.name,
+            customTextMode: true,
+          };
+          // Set page title
+          this.activeRootCategoryId = item.rootCategoryId;
+          this.title = item.name;
         }
-        // Set page title
-        this.activeRootCategoryId = item.rootCategoryId
-        this.title = item.name;
-      }
-    });
-    // Add breadcrumb
-    this.route.snapshot.data.services.map((item) => {
-      if (item.id === this.activeRootCategoryId) {
-        this.breadcrumbs[2] = {
-          link: '/services/content/' + item.id,
-          title: item.name,
-          customTextMode: true,
+      });
+      // Add breadcrumb
+      this.route.snapshot.data.services.map((item) => {
+        if (item.id === this.activeRootCategoryId) {
+          this.breadcrumbs[2] = {
+            link: '/services/content/' + item.id,
+            title: item.name,
+            customTextMode: true,
+          };
         }
-      }
-    })
+      });
+    }
   }
 
   private routeParamsSubscription(): void {

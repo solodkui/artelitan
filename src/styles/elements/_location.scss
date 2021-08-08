@@ -58,9 +58,10 @@
   }
 
   &__item {
-    padding: 10px 5px;
-    margin-bottom: 5px;
     transition: $t-normal;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+    cursor: pointer;
 
     &:hover {
       background-color: $c-white-2;

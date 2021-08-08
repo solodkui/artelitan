@@ -1,0 +1,55 @@
+<div class="c-news-main__wrapper">
+  <!-- Breadcrumbs -->
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <!-- Title -->
+  <h1 class="c-news-main__title">
+    {{ 'news.title' | translate }}
+  </h1>
+
+  <!-- Search -->
+  <div class="c-news-main__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <!-- Content -->
+  <div class="c-news-main__content" *ngFor="let newsBlock of newsList">
+    <div
+      class="c-news-main__item"
+      *ngFor="let newsItem of newsBlock; let i = index"
+      [ngStyle]="{
+        'grid-area': 'p' + (i + 1),
+        'order': i < 4 ? 1 : 3
+      }"
+    >
+      <app-e-news-item
+        [data]="newsItem"
+        [newWindow]="false"
+        [withImage]="i === 0 || i === 4"
+      ></app-e-news-item>
+    </div>
+    <div class="c-news-main__advertising c-news-main__advertising--1">
+      <b>
+        {{ 'news.advertising' | translate }}
+      </b>
+    </div>
+    <div class="c-news-main__advertising c-news-main__advertising--2">
+      <b>
+        {{ 'news.advertising' | translate }}
+      </b>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="c-news-main__footer">
+    <button
+      type="button"
+      class="button"
+      (click)="loadMore()"
+      [disabled]="loading"
+    >
+      <div class="button__loading rotating"></div>
+      <span> {{ 'news.more' | translate }}</span>
+    </button>
+  </div>
+</div>

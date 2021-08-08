@@ -1,0 +1,51 @@
+@use "sass:map";
+
+.c-news-detail-main {
+  margin-bottom: 80px;
+  display: block;
+
+  &__content {
+    margin-bottom: 30px;
+    display: flex;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      flex-direction: column;
+    }
+  }
+
+  &__block {
+    margin-right: 60px;
+  }
+
+  &__image {
+    border-radius: 30px;
+    max-width: 350px;
+    width: 100%;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      max-width: 100%;
+    }
+  }
+
+  &__date {
+    margin-bottom: 12px;
+    line-height: 11px;
+    font-size: 11px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      line-height: 34px;
+      text-align: left;
+      font-size: 25px;
+    }
+  }
+
+  &__article {
+    line-height: 19px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+}

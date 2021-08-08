@@ -8,17 +8,12 @@
   }
 
   &__item {
+    align-items: center;
     position: relative;
+    padding-left: 16px;
+    cursor: default;
     color: $c-grey;
     display: flex;
-    align-items: center;
-    padding-left: 16px;
-    cursor: pointer;
-    transition: $t-normal;
-
-    &:hover {
-      color: $c-blue;
-    }
 
     &:first-child {
       padding-left: 0;
@@ -36,6 +31,16 @@
       background-color: $c-blue-light;
       position: absolute;
       left: 6px;
+    }
+  }
+
+  &__link {
+    transition: $t-normal;
+    cursor: pointer;
+    color: $c-grey;
+
+    &:hover {
+      color: $c-blue;
     }
   }
 }

@@ -1,0 +1,17 @@
+@use "sass:map";
+
+.c-services-detail {
+  padding-bottom: 100px;
+
+  &__search {
+    margin-bottom: 60px;
+  }
+
+  &__main {
+    margin-bottom: 60px;
+  }
+
+  &__slider {
+    margin-bottom: 70px;
+  }
+}

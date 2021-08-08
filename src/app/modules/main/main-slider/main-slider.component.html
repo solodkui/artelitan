@@ -16,38 +16,64 @@
     class="c-main-slider__content"
   >
     <ng-template swiperSlide>
-      <img src="assets/images/slider/1.png" alt="slide1" />
+      <div class="c-main-slider__block">
+        <img src="assets/images/slider/1.png" alt="slide1" />
+        <b class="c-main-slider__text">
+          {{ 'slider.1.1' | translate }}
+          <br />
+          {{ 'slider.1.2' | translate }}
+        </b>
+      </div>
     </ng-template>
     <ng-template swiperSlide>
-      <img src="assets/images/slider/2.png" alt="slide2" />
+      <div class="c-main-slider__block">
+        <img src="assets/images/slider/2.png" alt="slide2" />
+        <b class="c-main-slider__text">
+          {{ 'slider.2.1' | translate }}
+          <br />
+          {{ 'slider.2.2' | translate }}
+        </b>
+      </div>
     </ng-template>
     <ng-template swiperSlide>
-      <img src="assets/images/slider/3.png" alt="slide3" />
+      <div class="c-main-slider__block">
+        <img src="assets/images/slider/3.png" alt="slide3" />
+        <b class="c-main-slider__text">
+          {{ 'slider.3.1' | translate }}
+          <br />
+          {{ 'slider.3.2' | translate }}
+        </b>
+      </div>
     </ng-template>
     <ng-template swiperSlide>
-      <img src="assets/images/slider/4.png" alt="slide4" />
+      <div class="c-main-slider__block">
+        <img src="assets/images/slider/4.png" alt="slide4" />
+        <b class="c-main-slider__text">
+          {{ 'slider.4' | translate }}
+        </b>
+      </div>
     </ng-template>
     <ng-template swiperSlide>
-      <img src="assets/images/slider/1.png" alt="slide5" />
+      <div class="c-main-slider__block">
+        <img src="assets/images/slider/1.png" alt="slide5" />
+        <b class="c-main-slider__text">
+          {{ 'slider.1.1' | translate }}
+          <br />
+          {{ 'slider.1.2' | translate }}
+        </b>
+      </div>
     </ng-template>
     <ng-template swiperSlide>
-      <img src="assets/images/slider/2.png" alt="slide6" />
+      <div class="c-main-slider__block">
+        <img src="assets/images/slider/2.png" alt="slide6" />
+        <b class="c-main-slider__text">
+          {{ 'slider.2.1' | translate }}
+          <br />
+          {{ 'slider.2.2' | translate }}
+        </b>
+      </div>
     </ng-template>
   </swiper>
-  <!-- <div class="c-main-slider__content">
-    <div class="c-main-slider__item">
-      <img src="assets/images/slider/1.png" alt="slide1" />
-    </div>
-    <div class="c-main-slider__item">
-      <img src="assets/images/slider/2.png" alt="slide2" />
-    </div>
-    <div class="c-main-slider__item">
-      <img src="assets/images/slider/3.png" alt="slide3" />
-    </div>
-    <div class="c-main-slider__item">
-      <img src="assets/images/slider/4.png" alt="slide4" />
-    </div>
-  </div> -->
   <div class="c-main-slider__arrow" (click)="next()">
     <svg
       class="icon c-main-slider__arrow__icon c-main-slider__arrow__icon--right"

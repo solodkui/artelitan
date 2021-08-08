@@ -1,25 +1,33 @@
 @use "sass:map";
 
-.e-sidebar-item {
-  display: block;
+.e-news-item {
   background-color: $c-silver;
+  align-items: flex-end;
   border-radius: 30px;
-  padding: 30px 20px;
+  overflow: hidden;
   cursor: default;
+  display: flex;
   height: 100%;
 
   &__wrapper {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    padding: 30px 20px;
+    display: flex;
+    width: 100%;
   }
 
   &__content {
     margin-right: 21px;
 
-
     @media (max-width: map.get($container-max-widths, "md")) {
       display: flex;
+    }
+
+    &--static {
+      @media (max-width: map.get($container-max-widths, "md")) {
+        display: block;
+      }
     }
   }
 

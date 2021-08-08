@@ -1,0 +1,57 @@
+<h1 class="c-read-more__title">
+  {{ 'news.readMore' | translate }}
+</h1>
+<div class="c-read-more__wrapper">
+  <div
+    class="c-read-more__item"
+    *ngFor="let newsItem of newsList; let i = index"
+  >
+    <!-- Image block -->
+    <div class="c-read-more__image-block">
+      <!-- Image -->
+      <img
+        [alt]="'Image-' + i"
+        class="c-read-more__image"
+        [src]="newsItem.imageUrl || 'https://via.placeholder.com/250'"
+      />
+    </div>
+    <!-- Content -->
+    <div class="c-read-more__content">
+      <div class="c-read-more__date">
+        {{ newsItem.created | date }}
+      </div>
+      <a class="c-read-more__text" target="_blank" [href]="newsItem.sourceUrl">
+        <b>
+          {{ newsItem.title }}
+        </b>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- <div
+class="c-read-more__wrapper"
+[ngStyle]="{
+  'background-image': withImage ? 'url(' + data.imageUrl + ')' : null,
+  'background-size': withImage ? 'cover' : null,
+  height: withImage ? '320px' : null
+}"
+>
+<div
+  class="c-read-more__content"
+  [class.c-read-more__content--static]="withImage"
+>
+  <div class="c-read-more__date">
+    {{ data.created | date }}
+  </div>
+  <div class="c-read-more__title">
+    {{ data.title }}
+  </div>
+</div>
+<a
+  class="c-read-more__link"
+  (click)="openPage()"
+>
+  <app-e-circle></app-e-circle>
+</a>
+</div> -->

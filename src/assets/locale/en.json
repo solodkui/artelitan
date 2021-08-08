@@ -1,0 +1,216 @@
+{
+  "navigation": {
+    "news": "News",
+    "services": "Services",
+    "companies": "Companies",
+    "contacts": "Contacts"
+  },
+  "location": {
+    "title": "The settlement",
+    "list": {
+      "moscow": "Moscow",
+      "ekaterinburg": "Ekaterinburg",
+      "voronezh": "Voronezh"
+    }
+  },
+  "sidebar": {
+    "title": "Latest news",
+    "allNews": "All news"
+  },
+  "search": {
+    "placeholder": "Search ...",
+    "titles": {
+      "selectSiteSection": "Select a site section",
+      "selectSiteServices": "Select the services section"
+    },
+    "items": {
+      "news": "News",
+      "services": "Services",
+      "companies": "Companies"
+    }
+  },
+  "main": {
+    "title": "Popular categories",
+    "title2": "Popular services",
+    "popular": {
+      "date": "Date of publication",
+      "views": "views",
+      "more": "Show more"
+    }
+  },
+  "footer": {
+    "info": {
+      "1": "Services",
+      "2": "All rights reserved"
+    },
+    "menu": {
+      "title": "Menu",
+      "list": {
+        "main": "Home",
+        "news": "News",
+        "services": "Services",
+        "companies": "Companies",
+        "contacts": "Contacts"
+      }
+    },
+    "information": {
+      "title": "Information",
+      "list": {
+        "about": "About the project",
+        "advertisers": "To advertisers",
+        "feedback": "Feedback"
+      }
+    },
+    "contacts": {
+      "title": "Contact us"
+    }
+  },
+  "services": {
+    "breadcrumbs": {
+      "main": "Home",
+      "services": "Services"
+    },
+    "title": "Services"
+  },
+  "contacts": {
+    "breadcrumbs": {
+      "main": "Home",
+      "contacts": "Contacts"
+    },
+    "title": "Contact information",
+    "subtitle": "Rules for adding information to the site",
+    "info": {
+      "1": "To add a company to the site you need to send to",
+      "2": "e-mail",
+      "3": "the following information:"
+    },
+    "list": {
+      "1": "Legal name",
+      "2": "Marketing name",
+      "3": "LPG",
+      "4": "Legal address",
+      "5": "Physical address",
+      "6": "Phone",
+      "7": "Email"
+    }
+  },
+  "feedback": {
+    "title": "Feedback",
+    "info": {
+      "1": "Do you have any questions, wishes or suggestions? Contact us in the most convenient way! Write to us by e-mail",
+      "2": " or use the form below. "
+    },
+    "form": {
+      "fullname": {
+        "title": "Full name",
+        "placeholder": "Ivanov Ivan Ivanovich"
+      },
+      "phone": "Phone number",
+      "email": "Email",
+      "text": {
+        "title": "Message text",
+        "placeholder": "Enter message"
+      },
+      "uploader": {
+        "text": "Attach file",
+        "button": "Download",
+        "info": "File size should not exceed 10 MB"
+      },
+      "submit": "Submit"
+    },
+    "submited": {
+      "title": "Thank you for using the feedback form!",
+      "subtitle": "We will carefully review your message and reply to your email within 2 days.",
+      "button": "Back to Home"
+    }
+  },
+  "about": {
+    "title": "About the project",
+    "content": {
+      "1": "Artelitan",
+      "2": "is an information service that will introduce you to the companies and the services they provide."
+    }
+  },
+  "advertisers": {
+    "title": "Advertisers",
+    "info": {
+      "1": "This section contains information for advertisers.",
+      "2": "To add a company to the site you need to send to",
+      "3": "e-mail",
+      "4": "the following information:"
+    },
+    "subtitle": "Rules for adding information to the site",
+    "list": {
+      "1": "Legal name",
+      "2": "Marketing Name",
+      "3": "UNP",
+      "4": "Legal address",
+      "5": "Physical address",
+      "6": "Phone",
+      "7": "Email"
+    }
+  },
+  "companies": {
+    "breadcrumbs": {
+      "main": "Main",
+      "companies": "Companies"
+    },
+    "title": "Companies",
+    "filter": "Filter",
+    "sort": "Sort by"
+  },
+  "filter": {
+    "title": "Choose a service"
+  },
+  "sort": {
+    "list": {
+      "date": "date of publication",
+      "name": "name"
+    }
+  },
+  "errorPage": {
+    "title": "Oops ... Something seems to have gone wrong",
+    "subtitle": {
+      "1": "We're sorry, but the page you tried to go to does not exist. Please return to",
+      "2": "Home",
+      "3": "or use the search:"
+    }
+  },
+  "servicesDetail": {
+    "reviews": "reviews",
+    "publishDate": "Date of publication",
+    "views": "views",
+    "service": "Service",
+    "price": "Price",
+    "currency": "rub"
+  },
+  "news": {
+    "breadcrumbs": {
+      "main": "Main",
+      "news": "News"
+    },
+    "title": "News",
+    "advertising": "Advertising",
+    "more": "Show more",
+    "description": "Description",
+    "teaser": "Teaser",
+    "readMore": "Read also"
+  },
+  "more": "Show more",
+  "slider": {
+    "1": {
+      "1": "Household",
+      "2": "services"
+    },
+    "2": {
+      "1": "Beauty",
+      "2": "and health"
+    },
+    "3": {
+      "1": "Active",
+      "2": "rest and leisure"
+    },
+    "4": "Training"
+  }
+  
+}

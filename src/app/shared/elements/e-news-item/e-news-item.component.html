@@ -1,0 +1,26 @@
+<div
+  class="e-news-item__wrapper"
+  [ngStyle]="{
+    'background-image': withImage ? 'url(' + data.imageUrl + ')' : null,
+    'background-size': withImage ? 'cover' : null,
+    height: withImage ? '320px' : null
+  }"
+>
+  <div
+    class="e-news-item__content"
+    [class.e-news-item__content--static]="withImage"
+  >
+    <div class="e-news-item__date">
+      {{ data.created | date }}
+    </div>
+    <div class="e-news-item__title">
+      {{ data.title }}
+    </div>
+  </div>
+  <a
+    class="e-news-item__link"
+    (click)="openPage()"
+  >
+    <app-e-circle></app-e-circle>
+  </a>
+</div>

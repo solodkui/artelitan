@@ -13,7 +13,7 @@ export class GlobalService {
 
   getNews(count: number = 3): Observable<Array<NewsItem>> {
     return this.http
-    .get<Array<NewsItem>>(`${environment.api}/NewsArticle/GetLastNews?count=${count}`, {
+    .get<Array<NewsItem>>(`${environment.api}NewsArticle/GetLastNews?count=${count}`, {
       withCredentials: false,
     });
   }

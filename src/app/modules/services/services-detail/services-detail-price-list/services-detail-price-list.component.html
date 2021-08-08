@@ -1,0 +1,21 @@
+<div class="c-services-detail-price-list__wrapper">
+  <!-- Header -->
+  <div class="c-services-detail-price-list__header">
+    <span>{{ 'servicesDetail.service' | translate }}</span>
+    <span>{{ 'servicesDetail.price' | translate }}</span>
+  </div>
+
+  <!-- List -->
+  <ul class="c-services-detail-price-list__list">
+    <li
+      *ngFor="let service of services"
+      class="c-services-detail-price-list__item"
+    >
+      <div class="c-services-detail-price-list__text">
+        <span>{{ service.title }}</span>
+      </div>
+      <b class="color-blue">{{ service.price }} {{ 'servicesDetail.currency' | translate }}</b>
+      <div class="c-services-detail-price-list__line"></div>
+    </li>
+  </ul>
+</div>

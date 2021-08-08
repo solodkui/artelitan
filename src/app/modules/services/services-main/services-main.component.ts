@@ -24,6 +24,8 @@ export class ServicesMainComponent {
   serviceList: Array<any> = [];
 
   constructor(private route: ActivatedRoute) {
-    this.serviceMainList = this.route.snapshot.data.services.filter((item) => !item.rootCategoryId);
+    if (typeof window !== 'undefined') {
+      this.serviceMainList = this.route.snapshot.data.services.filter((item) => !item.rootCategoryId);
+    }
   }
 }

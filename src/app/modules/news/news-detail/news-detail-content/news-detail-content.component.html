@@ -1,0 +1,93 @@
+<div class="c-news-detail-content__wrapper">
+  <div
+    class="c-news-detail-content__item"
+    *ngFor="let contentItem of content; let i = index"
+  >
+    <!-- Main -->
+    <div class="c-news-detail-content__main">
+      <!-- Image -->
+      <img
+        [src]="contentItem.imageUrl"
+        [alt]="'Logo-' + i"
+        class="c-news-detail-content__image"
+      />
+      <!-- Info -->
+      <div class="c-news-detail-content__info">
+        <!-- Title -->
+        <h1 class="c-news-detail-content__title">«{{ contentItem.title }}»</h1>
+        <!-- Params -->
+        <div class="c-news-detail-content__params">
+          <div
+            class="c-news-detail-content__params__item"
+            *ngFor="let param of contentItem.params"
+          >
+            <b class="c-news-detail-content__params__title">
+              {{ param.title }}
+            </b>
+            <span class="c-news-detail-content__params__value">
+              {{ param.value }}
+            </span>
+          </div>
+        </div>
+        <!-- Image -->
+        <img
+          [src]="contentItem.imageUrl"
+          [alt]="'Logo-' + i"
+          class="c-news-detail-content__image c-news-detail-content__image--mobile"
+        />
+        <!-- Description -->
+        <div class="c-news-detail-content__description">
+          <!-- Description title -->
+          <div class="c-news-detail-content__description__title">
+            <b>
+              {{ 'news.description' | translate }}
+            </b>
+          </div>
+          <!-- Description text -->
+          <p class="c-news-detail-content__description__text">
+            {{ contentItem.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Video block -->
+    <div class="c-news-detail-content__video-block">
+      <!-- Video block title -->
+      <div class="c-news-detail-content__video-block__title">
+        <b>
+          {{ 'news.teaser' | translate }}
+        </b>
+      </div>
+      <!-- Video block content -->
+      <div class="c-news-detail-content__video-block__content">
+        <video
+          class="c-news-detail-content__video"
+          muted="true"
+          [id]="'video-' + i"
+        >
+          <source [src]="contentItem.videoUrl" type="video/mp4" />
+        </video>
+        <!-- Play button -->
+        <a
+          class="c-news-detail-content__play"
+          (click)="playVideo(i)"
+          *ngIf="!playVideoIds[i]"
+        >
+          <svg class="icon c-news-detail-content__svg">
+            <use xlink:href="#icon-play"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advertising -->
+  <div class="c-news-detail-content__advertising">
+    <b>
+      {{ 'news.advertising' | translate }}
+    </b>
+  </div>
+
+  <!-- Read more -->
+  <app-read-more></app-read-more>
+</div>

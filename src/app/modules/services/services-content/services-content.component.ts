@@ -27,20 +27,23 @@ export class ServicesContentComponent implements OnDestroy {
   title: string;
 
   constructor(private route: ActivatedRoute) {
+    console.log(this.route.snapshot.data.services);
     this.routeParamsSubscription();
-    this.contentList = this.route.snapshot.data.services.filter((item) => {
-      if (item.id === this.activeServiceId) {
-        // Add breadcrumb
-        this.breadcrumbs.push({
-          link: '/services/content/' + item.id,
-          title: item.name,
-          customTextMode: true,
-        });
-        // Set page title
-        this.title = item.name;
-      }
-      return item.rootCategoryId === this.activeServiceId;
-    });
+    if (typeof window !== 'undefined') {
+      this.contentList = this.route.snapshot.data.services.filter((item) => {
+        if (item.id === this.activeServiceId) {
+          // Add breadcrumb
+          this.breadcrumbs.push({
+            link: '/services/content/' + item.id,
+            title: item.name,
+            customTextMode: true,
+          });
+          // Set page title
+          this.title = item.name;
+        }
+        return item.rootCategoryId === this.activeServiceId;
+      });
+    }
   }
 
   ngOnDestroy(): void {

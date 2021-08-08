@@ -1,6 +1,6 @@
 @use "sass:map";
 
-.c-service-product{
+.c-service-product {
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -53,13 +53,13 @@
   }
   
   &__title {
+    margin-bottom: 20px;
     line-height: 19px;
     font-weight: 600;
-    font-size: 14px;
-    color: $c-blue;
     max-width: 410px;
-    margin-bottom: 20px;
+    font-size: 14px;
     cursor: default;
+    color: $c-blue;
 
     @media (max-width: map.get($container-max-widths, "lg")) {
       padding-top: 30px;

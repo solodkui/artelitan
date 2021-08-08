@@ -13,6 +13,8 @@ import { SvgComponent } from './components/svg/svg.component';
 import { CBreadcrumbsComponent } from './components/c-breadcrumbs/c-breadcrumbs.component';
 import { CFilterComponent } from './components/c-filter/c-filter.component';
 import { CSortComponent } from './components/c-sort/c-sort.component';
+import { ENewsItemComponent } from './elements/e-news-item/e-news-item.component';
+import { LanguageComponent } from './components/language/language.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(
@@ -37,7 +39,9 @@ export class MissingTranslationService implements MissingTranslationHandler {
     SvgComponent,
     CBreadcrumbsComponent,
     CFilterComponent,
-    CSortComponent
+    CSortComponent,
+    ENewsItemComponent,
+    LanguageComponent
   ],
   imports: [
     CommonModule,
@@ -62,7 +66,9 @@ export class MissingTranslationService implements MissingTranslationHandler {
     SvgComponent,
     CBreadcrumbsComponent,
     CFilterComponent,
-    CSortComponent
+    CSortComponent,
+    ENewsItemComponent,
+    LanguageComponent
   ],
 })
 

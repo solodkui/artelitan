@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { SidebarResolver } from './sidebar/sidebar.resolver';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { SidebarResolver } from './sidebar/sidebar.resolver';
+import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
@@ -57,13 +57,18 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'news',
+        loadChildren: () =>
+          import('../modules/news/news.module').then((m) => m.NewsModule),
+      },
+      {
         path: '404',
         loadChildren: () =>
           import('../modules/error/error.module').then((m) => m.ErrorModule),
       },
     ],
   },
-  { path: '**', redirectTo: '404', pathMatch: 'full' },
+  { path: '*', redirectTo: '404' },
 ];
 
 @NgModule({

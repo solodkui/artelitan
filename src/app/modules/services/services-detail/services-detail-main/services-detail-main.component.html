@@ -1,0 +1,63 @@
+<section class="c-services-detail-main__wrapper" *ngIf="mainInfo">
+  <!-- Logo -->
+  <img
+    alt="Main logo"
+    [src]="mainInfo.logo || 'https://via.placeholder.com/250'"
+    class="c-services-detail-main__logo"
+  />
+  <!-- Info -->
+  <div class="c-services-detail-main__content">
+    <!-- Top -->
+    <div class="c-services-detail-main__content__top">
+      <!-- Stars -->
+      <div class="c-services-detail-main__stars">
+        <app-stars [starCount]="mainInfo.stars"></app-stars>
+      </div>
+      <!-- Reviews -->
+      <span
+        >({{ mainInfo.reviewsCount }}
+        {{ 'servicesDetail.reviews' | translate }})</span
+      >
+    </div>
+    <!-- Title -->
+    <h1 class="c-services-detail-main__title">
+      <span
+        >({{ mainInfo.reviewsCount }}
+        {{ 'servicesDetail.reviews' | translate }})</span
+      >
+      {{ mainInfo.title }}
+    </h1>
+    <!-- Bottom -->
+    <div class="c-services-detail-main__content__bottom">
+      <!-- Date -->
+      <div class="c-services-detail-main__item">
+        <span
+          >{{ 'servicesDetail.publishDate' | translate }}:
+          {{ mainInfo.date }}</span
+        >
+      </div>
+      <!-- Location -->
+      <div class="c-services-detail-main__item">
+        <svg
+          class="
+            c-services-detail-main__svg c-services-detail-main__svg--location
+          "
+        >
+          <use xlink:href="#icon-location"></use>
+        </svg>
+        <span>{{ mainInfo.location }}</span>
+      </div>
+      <!-- Views -->
+      <div class="c-services-detail-main__item">
+        <svg
+          class="c-services-detail-main__svg c-services-detail-main__svg--eye"
+        >
+          <use xlink:href="#icon-eye"></use>
+        </svg>
+        <span
+          >{{ mainInfo.views }} {{ 'servicesDetail.views' | translate }}</span
+        >
+      </div>
+    </div>
+  </div>
+</section>

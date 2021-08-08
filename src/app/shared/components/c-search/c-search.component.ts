@@ -44,9 +44,11 @@ export class CSearchComponent {
   }
 
   private getCategories(): void {
-    this.globalService.getCategories().subscribe((categoryList) => {
-      this.categoryList = categoryList.filter((item) => item.rootCategoryId);
-      this.initForm();
-    });
+    if (typeof window !== 'undefined') {
+      this.globalService.getCategories().subscribe((categoryList) => {
+        this.categoryList = categoryList.filter((item) => item.rootCategoryId);
+        this.initForm();
+      });
+    }
   }
 }

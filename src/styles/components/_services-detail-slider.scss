@@ -1,0 +1,66 @@
+@use "sass:map";
+
+.c-services-detail-slider {
+  position: relative;
+  display: block;
+
+  &__wrapper {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  &__content {
+    padding-bottom: 25px;
+    width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__arrow {
+    border: 1px solid $c-blue;
+    justify-content: center;
+    top: calc(50% - 20px);
+    align-items: center;
+    margin-bottom: 60px;
+    position: absolute;
+    border-radius: 50%;
+    min-height: 40px;
+    min-width: 40px;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    width: 40px;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &__icon {
+      font-size: 10px;
+      color: $c-blue;
+
+      &--left {
+        transform: rotate(90deg);
+      }
+
+      &--right {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+  
+    @media (max-width: map.get($container-max-widths, "sm")) {
+      display: block;
+      bottom: 0;
+    }
+  }
+}

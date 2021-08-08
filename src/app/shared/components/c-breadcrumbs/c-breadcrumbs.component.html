@@ -1,12 +1,24 @@
 <div class="c-breadcrumbs__wrapper">
   <div class="c-breadcrumbs__item" *ngFor="let item of list">
-    <a (click)="redirect(item.link)" *ngIf="item">
-      <ng-container *ngIf="item.customTextMode; else staticMode">
-        {{ item.title }}
-      </ng-container>
-      <ng-template #staticMode>
-        {{ item.title | translate }}
-      </ng-template>
-    </a>
+    <ng-container *ngIf="item && item.static; else staticMode">
+      <span *ngIf="item">
+        <ng-container *ngIf="item.customTextMode; else translateStaticMode">
+          {{ item.title }}
+        </ng-container>
+        <ng-template #translateStaticMode>
+          {{ item.title | translate }}
+        </ng-template>
+      </span>
+    </ng-container>
+    <ng-template #staticMode>
+      <a (click)="redirect(item.link)" *ngIf="item" class="c-breadcrumbs__link">
+        <ng-container *ngIf="item.customTextMode; else translateMode">
+          {{ item.title }}
+        </ng-container>
+        <ng-template #translateMode>
+          {{ item.title | translate }}
+        </ng-template>
+      </a>
+    </ng-template>
   </div>
 </div>

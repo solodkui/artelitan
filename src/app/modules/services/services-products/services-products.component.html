@@ -1,38 +1,56 @@
 <section class="c-service-product">
   <div class="c-service-product__wrapper">
     <div class="c-service-product__item" *ngFor="let item of contentList">
-      <img [src]="item.image" alt="" class="c-service-product__image">
+      <img [src]="item.image" alt="" class="c-service-product__image" />
 
       <div class="c-service-product__content">
         <div class="c-service-product__content__wrapper">
           <h6 class="c-service-product__title">
-            {{ item.title }}
+            <a
+              class="c-services-products__link"
+              [routerLink]="'/services/detail/' + item.id"
+            >
+              {{ item.title }}
+            </a>
           </h6>
-  
+
           <div class="c-service-product__info">
             <div class="c-service-product__info__wrapper">
               <span class="c-service-product__info__date">
-                {{ "main.popular.date" | translate }}: 
+                {{ 'main.popular.date' | translate }}:
                 {{ item.date }}
               </span>
-    
+
               <span class="c-service-product__info__item">
-                <svg class="c-service-product__info__icon c-service-product__info__icon--location">
+                <svg
+                  class="
+                    c-service-product__info__icon
+                    c-service-product__info__icon--location
+                  "
+                >
                   <use xlink:href="#icon-location"></use>
                 </svg>
                 {{ item.location }}
               </span>
             </div>
-  
+
             <span class="c-service-product__info__item">
-              <svg class="c-service-product__info__icon c-service-product__info__icon--eye">
+              <svg
+                class="
+                  c-service-product__info__icon
+                  c-service-product__info__icon--eye
+                "
+              >
                 <use xlink:href="#icon-eye"></use>
               </svg>
-              {{ item.views }} {{ "main.popular.views" | translate }}
+              {{ item.views }} {{ 'main.popular.views' | translate }}
             </span>
           </div>
         </div>
-        <a class="c-service-product__content__more" target="_blank" href="#">
+        <a
+          class="c-service-product__content__more"
+          [routerLink]="'/services/detail/' + item.id"
+        >
           <app-e-circle></app-e-circle>
         </a>
       </div>
@@ -43,7 +61,7 @@
   <div class="c-service-product__more" (click)="loadMore()">
     <button class="button" type="button" [disabled]="loading">
       <div class="button__loading rotating"></div>
-      <span>{{ 'main.popular.more' | translate}}</span>
+      <span>{{ 'main.popular.more' | translate }}</span>
     </button>
   </div>
 </section>

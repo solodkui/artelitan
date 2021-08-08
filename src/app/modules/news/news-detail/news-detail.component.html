@@ -1,0 +1,22 @@
+<div class="c-news-detail__wrapper">
+  <!-- Search -->
+  <div class="c-news-detail__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <!-- Main -->
+  <app-news-detail-main
+    [title]="newsDetail.title"
+    [article]="newsDetail.article"
+    [created]="newsDetail.created"
+    [imageUrl]="newsDetail.imageUrl"
+  ></app-news-detail-main>
+
+  <!-- Content -->
+  <app-news-detail-content
+    [content]="newsDetail.content"
+  ></app-news-detail-content>
+</div>

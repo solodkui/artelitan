@@ -1,0 +1,32 @@
+.e-stars {
+  display: block;
+
+  &__wrapper {
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    height: 15px;
+    width: 105px;
+  }
+
+  &__item {
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__svg {
+    margin-top: -10px;
+    fill: $c-grey;
+    height: 35px;
+    width: 35px;
+
+    &--yellow {
+      fill: $c-yellow;
+    }
+  }
+}

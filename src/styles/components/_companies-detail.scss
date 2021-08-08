@@ -43,6 +43,10 @@
     margin-bottom: 30px;
     line-height: 34px;
     font-size: 25px;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      text-align: left;
+    }
   }
 
   &__description {

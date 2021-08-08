@@ -1,0 +1,27 @@
+<div class="c-news-detail-main__wrapper">
+  <div class="c-news-detail-main__content">
+    <!-- Info -->
+    <div class="c-news-detail-main__block">
+      <!-- Date -->
+      <p class="c-news-detail-main__date">
+        {{ created | date }}
+      </p>
+      <!-- Title -->
+      <h1 class="c-news-detail-main__title">
+        {{ title }}
+      </h1>
+      <!-- Social -->
+      <app-news-detail-main-social></app-news-detail-main-social>
+    </div>
+    <!-- Image -->
+    <img
+      [src]="imageUrl"
+      alt="News main image"
+      class="c-news-detail-main__image"
+    />
+  </div>
+  <!-- Article -->
+  <p class="c-news-detail-main__article">
+    {{ article }}
+  </p>
+</div>

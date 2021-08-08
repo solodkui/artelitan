@@ -1,0 +1,76 @@
+@use "sass:map";
+
+.c-services-detail-price-list {
+  &__header {
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 16px;
+    color: $c-blue;
+    display: flex;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 18px;
+    display: flex;
+
+    &::before {
+      display: inline-block;
+      color: $c-blue-light;
+      position: absolute;
+      font-weight: bold;
+      content: '\2022';
+      height: 6px;
+      width: 6px;
+      top: 3px;
+      left: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span {
+      background-color: $c-white;
+      z-index: 3;
+    }
+
+    b {
+      background-color: $c-white;
+      z-index: 3;
+    }
+  }
+
+  &__text {
+    position: relative;
+    line-height: 19px;
+    max-width: 385px;
+    font-size: 14px;
+    z-index: 3;
+
+    @media (max-width: map.get($container-max-widths, 'sm')) {
+      max-width: 140px;
+    }
+  }
+
+  &__line {
+    border-bottom: 1px dotted $c-blue-light;
+    position: absolute;
+    bottom: 3px;
+    left: 18px;
+    z-index: 2;
+    right: 0;
+  }
+}

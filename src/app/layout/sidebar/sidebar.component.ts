@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NewsItem } from 'src/app/interfaces/news-item';
 
@@ -7,13 +7,13 @@ import { NewsItem } from 'src/app/interfaces/news-item';
   templateUrl: './sidebar.component.html',
   host: { class: 'c-sidebar' },
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements AfterContentInit {
   newsList: Array<NewsItem> = [];
   swiper: any;
 
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngAfterContentInit(): void {
     this.newsList = this.route.snapshot.data.news;
   }
 

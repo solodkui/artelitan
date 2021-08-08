@@ -1,0 +1,10 @@
+.c-services-products {
+  &__link {
+    transition: $t-normal;
+    color: $c-black;
+
+    &:hover {
+      color: $c-blue;
+    }
+  }
+}

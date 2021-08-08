@@ -1,0 +1,51 @@
+<section class="c-services-detail-slider__wrapper">
+  <div
+    class="
+      c-services-detail-slider__arrow c-services-detail-slider__arrow--left
+    "
+    (click)="prev()"
+  >
+    <svg
+      class="
+        icon
+        c-services-detail-slider__arrow__icon
+        c-services-detail-slider__arrow__icon--left
+      "
+    >
+      <use xlink:href="#icon-arrow"></use>
+    </svg>
+  </div>
+
+  <swiper
+    [loop]="true"
+    [breakpoints]="breakpoints"
+    (swiper)="onSwiper($event)"
+    (slideChange)="onSlideChange()"
+    [pagination]="{ clickable: false }"
+    class="c-services-detail-slider__content"
+  >
+    <ng-template swiperSlide *ngFor="let image of images; let i = index">
+      <img
+        [src]="image"
+        [alt]="'Slide image ' + i"
+        class="c-services-detail-slider__image"
+      />
+    </ng-template>
+  </swiper>
+  <div
+    class="
+      c-services-detail-slider__arrow c-services-detail-slider__arrow--right
+    "
+    (click)="next()"
+  >
+    <svg
+      class="
+        icon
+        c-services-detail-slider__arrow__icon
+        c-services-detail-slider__arrow__icon--right
+      "
+    >
+      <use xlink:href="#icon-arrow"></use>
+    </svg>
+  </div>
+</section>

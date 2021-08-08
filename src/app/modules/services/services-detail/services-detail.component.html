@@ -1,0 +1,33 @@
+<div class="c-services-detail__wrapper">
+  <!-- Search -->
+  <div class="c-services-detail__search">
+    <app-c-search></app-c-search>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <app-c-breadcrumbs [list]="breadcrumbs"></app-c-breadcrumbs>
+
+  <!-- Main info -->
+  <div class="c-services-detail__main">
+    <app-services-detail-main
+      [mainInfo]="servicesDetail"
+    ></app-services-detail-main>
+  </div>
+
+  <!-- Slider -->
+  <div class="c-services-detail__slider">
+    <app-services-detail-slider
+      [images]="servicesDetail.images"
+    ></app-services-detail-slider>
+  </div>
+
+  <!-- Company info -->
+  <app-services-detail-company
+    [companyInfo]="servicesDetail.companyInfo"
+  ></app-services-detail-company>
+
+  <!-- Price list -->
+  <app-services-detail-price-list
+    [services]="servicesDetail.services"
+  ></app-services-detail-price-list>
+</div>

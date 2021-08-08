@@ -12,7 +12,7 @@
   <ul class="c-services-main__list">
     <li
       class="c-services-main__item"
-      [title]="serviceMainItem.title | translate"
+      [title]="serviceMainItem.name"
       *ngFor="let serviceMainItem of serviceMainList; let i = index"
     >
       <a [routerLink]="'/services/content/' + serviceMainItem.id" class="c-services-main__link">

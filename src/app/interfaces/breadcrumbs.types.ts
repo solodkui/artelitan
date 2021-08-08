@@ -1,5 +1,6 @@
 export interface BreadcrumbsItem {
-  link: string;
-  title: string;
   customTextMode?: boolean;
+  static?: boolean;
+  title: string;
+  link: string;
 }
